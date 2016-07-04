@@ -1,0 +1,150 @@
+/***********************************************************
+                      	  Global
+************************************************************/
+
+
+@import "_extends.scss";
+
+.global {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+//////////// Clear Fix //////////////
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+//////////// Clear Fix //////////////
+
+
+//////////// Outline Hack //////////////
+#outline {
+	content: '';
+	position: absolute;
+
+	&:focus {
+		outline: none;
+	}
+};
+
+.outline-hover {
+    &:hover {
+        outline: none!important;
+    }
+}
+//////////// Outline Hack //////////////
+
+
+
+/***********************************************************
+                      Header Section
+************************************************************/
+
+
+.header-section {
+    width: 100%;
+    box-sizing: border-box;
+
+    .nav-section {
+        width: 100%;
+
+        .nav-content {
+
+            .logo-brand {
+                display: inline-block;
+                float: left;
+                width: 15%;
+                margin-top: ($var-brand-set-top / -2);
+                margin: $var-nav-top-bot auto;
+
+                a {
+                    margin: 0;
+                    text-decoration: none;
+                    color: $color-brand;
+                    font-size: (1em + $var-brand-set-top);
+
+                    &::before {
+
+                    }
+                }
+            }
+
+            .site-menu {
+                display: inline-block;
+                text-align: center;
+                width: 70%;
+
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    width: 100%;
+
+                    .item + .item {
+                        margin-left: 3em;
+                    }
+
+                    .item {
+                        display: inline-block;
+                        width: 15%;
+
+                        a {
+                            text-decoration: none;
+                            color: $color-site-menu;
+                            display: inline-block;
+                            font-size: 1.3em;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+
+            .blog-button {
+                display: inline-block;
+                float: right;
+                width: 15%;
+                margin-top: ($var-blog-set-top / -2);
+                margin: $var-nav-top-bot auto;
+
+                button {
+                    background-color: $color-blog-bg;
+                    border: initial;
+                    border-radius: 5px;
+                    float: right;
+                    color: $color-blog-text;
+                    padding: $var-blog-set-top 1.4em;
+                    letter-spacing: 4px;
+                }
+            }
+        }
+    }
+}
+
+
+/***********************************************************
+                     Content Section
+************************************************************/
+
+
+.content-section {
+
+    .greeting-container {
+        background-color: $color-greeting-bg;
+
+        .greeting-content {
+            text-align: center;
+
+            h1 {
+                margin: 6em 0;
+            }
+        }
+    }
+}
+
+
+/***********************************************************
+                      Footer Section
+************************************************************/

@@ -1,0 +1,95 @@
+/***********************************************************
+                        	Mixin
+************************************************************/
+
+
+@mixin text($size, $color :null, $weight :null, $letter-spacing :null, $line-height :null) {
+	font-size: $size;
+	line-height: $line-height;
+	font-weight: $weight;
+	color: $color;
+	letter-spacing: $letter-spacing;
+}
+
+@mixin background-content($icon, $size, $bg-position :null) {
+	background-image: url('../img/#{$icon}');
+	background-size: $size;
+	background-position: $bg-position;
+	content: '';
+	z-index: 1;
+	background-repeat: no-repeat;
+}
+@mixin bg-dimention-position($width, $height, $position, $top :null, $right :null, $bottom :null, $left :null) {
+	position: $position;
+	height: $height;
+	width: $width;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+
+/***********************************************************
+                      Place Holders
+************************************************************/
+
+
+%buttonless {
+	background-color: initial;
+	border: none;
+	padding: 0;
+}
+
+
+
+/***********************************************************
+                      	  Colors
+************************************************************/
+
+
+$white										: #ffffff;
+$black										: #000000;
+$Hippie-Blue								: #6598ab;	/**lg-desktop highlight**/
+$Silver-Sand								: #CBCDCD;	/**lg-desktop highlight topic**/
+$Java										: #23afc8;	/**selected**/
+$Deep-Cerulean								: #05839c;	/**Underline selected**/
+$Salmon										: #fa8661;  /**Blog Button**/
+$Arrowtown									: #998c6a;
+$Bazaar										: #9e888a;
+$Juniper									: #769992;
+$Dove-Gray									: #676767;
+
+/***********************************
+           Colors Function
+************************************/
+
+
+$color-site-menu									: $Dove-Gray;
+$color-brand										: $black;
+$color-blog-bg										: $Salmon;
+$color-blog-text									: $white;
+$color-greeting-bg									: $Hippie-Blue;
+
+
+/***********************************************************
+                      	Font Family
+************************************************************/
+
+
+
+
+/***********************************
+       Font Family Function
+************************************/
+
+
+/***********************************************************
+            	  Relationship Variables
+************************************************************/
+
+
+$var-blog-set-top : 0.4em;
+$var-brand-set-top : 0.6em;
+
+$var-nav-top-bot : 2em;
