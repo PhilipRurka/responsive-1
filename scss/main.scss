@@ -57,15 +57,14 @@
             .logo-brand {
                 display: inline-block;
                 float: left;
-                width: 15%;
-                margin-top: ($var-brand-set-top / -2);
-                margin: $var-nav-top-bot auto;
+                width: 17%;
+                margin: $var-brand-blog-top-set auto 0;
 
                 a {
                     margin: 0;
                     text-decoration: none;
                     color: $color-brand;
-                    font-size: (1em + $var-brand-set-top);
+                    font-size: 1.6em;
 
                     &::before {
 
@@ -76,27 +75,31 @@
             .site-menu {
                 display: inline-block;
                 text-align: center;
-                width: 70%;
+                width: 68%;
 
                 ul {
                     list-style: none;
                     margin: 0;
                     width: 100%;
+                    min-width: 514px;
+                    max-width: 1920px;
+                    display: inline-block;
 
                     .item + .item {
-                        margin-left: 3em;
+                        margin-left: 1%;
                     }
 
                     .item {
                         display: inline-block;
-                        width: 15%;
+                        width: 23%;
 
                         a {
                             text-decoration: none;
                             color: $color-site-menu;
                             display: inline-block;
-                            font-size: 1.3em;
-                            height: 100%;
+                            font-size: 1.5em;
+                            padding: 2em 0;
+                            width: 12rem;
                         }
                     }
                 }
@@ -106,8 +109,7 @@
                 display: inline-block;
                 float: right;
                 width: 15%;
-                margin-top: ($var-blog-set-top / -2);
-                margin: $var-nav-top-bot auto;
+                margin: $var-brand-blog-top-set auto 0;
 
                 button {
                     background-color: $color-blog-bg;
@@ -115,7 +117,7 @@
                     border-radius: 5px;
                     float: right;
                     color: $color-blog-text;
-                    padding: $var-blog-set-top 1.4em;
+                    padding: 0.4em 1.4em;
                     letter-spacing: 4px;
                 }
             }
