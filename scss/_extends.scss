@@ -59,6 +59,8 @@ $Arrowtown									: #998c6a;
 $Bazaar										: #9e888a;
 $Juniper									: #769992;
 $Dove-Gray									: #676767;
+$Emperor									: #505050;
+
 
 /***********************************
            Colors Function
@@ -69,8 +71,10 @@ $color-site-menu									: $Dove-Gray;
 $color-brand										: $black;
 $color-blog-bg										: $Salmon;
 $color-blog-text									: $white;
+
 $color-greeting-bg									: $Hippie-Blue;
 
+$color-item-img										: $Emperor;
 
 /***********************************************************
                       	Font Family
@@ -90,3 +94,5 @@ $color-greeting-bg									: $Hippie-Blue;
 
 
 $var-brand-blog-top-set : 3em;
+
+$var-greeting-container-size : 30vh;

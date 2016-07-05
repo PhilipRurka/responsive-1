@@ -130,17 +130,57 @@
                      Content Section
 ************************************************************/
 
+/******************************
+           Greeting
+******************************/
 
 .content-section {
+    height: 100%;
 
     .greeting-container {
         background-color: $color-greeting-bg;
+        width: 100vw;
 
         .greeting-content {
             text-align: center;
+            height: 100%;
 
             h1 {
-                margin: 6em 0;
+                margin: calc(#{$var-greeting-container-size} / 2) 0;
+                font-size: 15vh;
+            }
+        }
+    }
+}
+
+/******************************
+           Greeting
+******************************/
+
+.content-wrap {
+
+    .content-item {
+
+        ul {
+            list-style: none;
+            list-style-position: inside;
+
+            .item {
+
+                .item-img {
+                    background-color: $color-item-img;
+                    width: 100%;
+                    height: calc(100vw - 80vw - (8 * 15px));
+                    display: inline-block;
+
+                    img {
+
+                    }
+                }
+
+                p {
+
+                }
             }
         }
     }
