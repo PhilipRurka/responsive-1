@@ -94,10 +94,18 @@ $color-item-img										: $Emperor;
 
 
 
-$var-brand-blog-top-set : 3em;
+$var-lg-brand-blog-top-set : 3em;
+$var-sm-brand-blog-top-set : 1.5em;
+
 
 $var-greeting-container-size : 30vh;
 
+
 $var-item-img : calc(100vw - 83vw - (8 * 15px));
-$var-content-item-a : calc(#{$var-item-img} * 2 + 2vw);
+$var-content-item-a : calc(#{$var-item-img} * 2 + 5vw);
 $var-p-max-height : calc(100% - 1.5em - #{$var-item-img});
+
+
+$var-img-min-height : 150px;
+$var-a-min-height : calc(#{$var-img-min-height} * 3);
+$var-p-min-height : calc(#{$var-img-min-height} * 2);
