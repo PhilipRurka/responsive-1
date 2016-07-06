@@ -160,26 +160,50 @@
 .content-wrap {
 
     .content-item {
+        margin-top: 6em;
+        margin-bottom: 6em;
 
         ul {
             list-style: none;
             list-style-position: inside;
 
             .item {
-
-                .item-img {
-                    background-color: $color-item-img;
-                    width: 100%;
-                    height: calc(100vw - 80vw - (8 * 15px));
-                    display: inline-block;
-
-                    img {
-
-                    }
+                &:nth-child(1n+4) {
+                    padding-top: 3em;
+                    background-color: white;
                 }
 
-                p {
+                .item-wrapper {
 
+                    a {
+                        display: inline-block;
+                        width: 100%;
+                        height: $var-content-item-a;
+                        background-color: mintcream;
+                        box-shadow: 2px 2px 8px -2px black;
+
+                        .item-img {
+                            background-color: $color-item-img;
+                            width: 100%;
+                            height: $var-item-img;
+                            display: inline-block;
+
+                            img {
+
+                            }
+                        }
+
+                        .p-wrapper {
+                            position: relative;
+
+                            p {
+                                font-size: 2em;
+                                position: absolute;
+                                top: 8px;
+                                left: 17px;
+                            }
+                        }
+                    }
                 }
             }
         }
