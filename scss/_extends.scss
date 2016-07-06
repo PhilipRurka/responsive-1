@@ -50,11 +50,11 @@
 
 $white										: #ffffff;
 $black										: #000000;
-$Hippie-Blue								: #6598ab;	/**lg-desktop highlight**/
-$Silver-Sand								: #CBCDCD;	/**lg-desktop highlight topic**/
-$Java										: #23afc8;	/**selected**/
-$Deep-Cerulean								: #05839c;	/**Underline selected**/
-$Salmon										: #fa8661;  /**Blog Button**/
+$Hippie-Blue								: #6598ab;
+$Silver-Sand								: #CBCDCD;
+$Java										: #23afc8;
+$Deep-Cerulean								: #05839c;
+$Salmon										: #fa8661;
 $Arrowtown									: #998c6a;
 $Bazaar										: #9e888a;
 $Juniper									: #769992;
@@ -67,14 +67,20 @@ $Emperor									: #505050;
 ************************************/
 
 
-$color-site-menu									: $Dove-Gray;
+$color-site-menu-a									: $Dove-Gray;
 $color-brand										: $black;
 $color-blog-bg										: $Salmon;
 $color-blog-text									: $white;
 
+$color-site-menu-selected							: $Java;
+$color-site-menu-a-selected							: $white;
+$color-site-menu-a-selected-underline				: $Deep-Cerulean;
+
 $color-greeting-bg									: $Hippie-Blue;
+$color-greeting-a									: $Silver-Sand;
 
 $color-item-img										: $Emperor;
+$color-item-p										: $Emperor;
 
 /***********************************************************
                       	Font Family

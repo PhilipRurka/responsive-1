@@ -44,6 +44,11 @@
                       Header Section
 ************************************************************/
 
+.site-menu-selected {
+    background-color: $color-site-menu-selected;
+    color: $color-site-menu-a-selected!important;
+    box-shadow: inset 0 -18px 0px 0px $color-site-menu-a-selected-underline;
+}
 
 .header-section {
     width: 100%;
@@ -157,7 +162,7 @@
 
                         a {
                             text-decoration: none;
-                            color: $color-site-menu;
+                            color: $color-site-menu-a;
                             display: inline-block;
                             font-size: 1.5em;
                             padding: 2em 0;
@@ -237,13 +242,14 @@
             h1 {
                 margin: calc(#{$var-greeting-container-size} / 3) 0;
                 font-size: 5vw;
+                color: $color-greeting-a;
             }
         }
     }
 }
 
 /******************************
-           Greeting
+            items
 ******************************/
 
 .content-wrap {
@@ -268,6 +274,7 @@
                         background-color: mintcream;
                         box-shadow: 2px 2px 8px -2px black;
                         margin-bottom: 3em;
+                        text-decoration: none;
 
                         @media screen and (max-width: 1580px) {
                             height: calc(450px + 5vw);
@@ -298,8 +305,11 @@
                             }
 
                             p {
-                                font-size: 1.1em;
+                                font-size: 1.3em;
                                 margin: 0.25em 1em 0;
+                                color: $color-item-p;
+                                letter-spacing: 0.5px;
+                                line-height: 1.75em;
                             }
                         }
                     }
