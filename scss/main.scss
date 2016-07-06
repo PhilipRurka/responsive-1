@@ -168,10 +168,7 @@
             list-style-position: inside;
 
             .item {
-                &:nth-child(1n+4) {
-                    padding-top: 3em;
-                    background-color: white;
-                }
+
 
                 .item-wrapper {
 
@@ -181,6 +178,7 @@
                         height: $var-content-item-a;
                         background-color: mintcream;
                         box-shadow: 2px 2px 8px -2px black;
+                        margin-bottom: 3em;
 
                         .item-img {
                             background-color: $color-item-img;
@@ -194,13 +192,13 @@
                         }
 
                         .p-wrapper {
-                            position: relative;
+                            max-height: $var-p-max-height;
+                            display: block;
+                            overflow: hidden;
 
                             p {
-                                font-size: 2em;
-                                position: absolute;
-                                top: 8px;
-                                left: 17px;
+                                font-size: 1.1em;
+                                margin: 0.25em 1em 0;
                             }
                         }
                     }
