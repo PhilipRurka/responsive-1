@@ -52,7 +52,7 @@ $('a, button').each(function(){
 
 
 /***********************************************************
-                       	   Test
+                     Img Split Effect
 ************************************************************/
 
 (function ( $, window, document, undefined ) {
@@ -61,24 +61,32 @@ $('a, button').each(function(){
 
     return this.each(function () {
 
-      // Vurribles
       var element = $(this),
           elemImg = element.find('img'),
           imgSrc  = elemImg.attr('src');
 
-      // We be chainin'
-      element
+
+    element
         .prepend('<span class="top-span"></span>')
         .append('<span class="btm-span"></span>')
         .find('span.top-span')
-        .css('background', 'url(' + imgSrc + ') no-repeat center 22%')
+        .css('background', 'url(' + imgSrc + ')')
+		.css('background-repeat', 'no-repeat')
+		.css('background-position', 'center calc(50% + 6em)')
         .css('background-size', '100%')
         .parent()
         .find('span.btm-span')
-        .css('background', 'url(' + imgSrc + ') no-repeat center 80%')
+        .css('background', 'url(' + imgSrc + ')')
+		.css('background-repeat', 'no-repeat')
+		.css('background-position', 'center calc(50% - 6em)')
         .css('background-size', '100%');
     });
   };
 })( jQuery, window, document );
 
 $('.item-img').rift_img();
+
+
+/***********************************************************
+                       	   Test
+************************************************************/

@@ -329,50 +329,55 @@
 ************************************************************/
 
 
-/* Base plugin styles */
 
 .item-img {
-  width: 300px; /* Define width */
+  width: 300px;
   position: relative;
   overflow: hidden;
   backface-visibility: hidden;
+  height: $var-item-img;
 
     img {
         width: 100%;
-        height: $var-item-img;
         -webkit-filter: blur(5px);
     	filter: blur(5px);
+        position: absolute;
+        top: -30px;
+        bottom: -30px;
     }
 
     .item-img-effect {
         position: absolute;
         top: 50%;
         width: 100%;
-        height: 60px; /* Define item-img-effect height */
-        line-height: 60px; /* Define matched line-height */
+        height: 60px;
+        line-height: 60px; /* Same as height */
         margin: -30px 0 0 0; /* Half item-img-effect height */
         text-align: center;
         z-index: 0;
     }
 
-    span[class*="span"] {
-        display: block;
-        width: 100%;
-        height: 50%;
-        overflow: hidden;
-        position: absolute;
-        left: 0;
-        z-index: 1;
-        transform: translate3d(0,0,0); /* Acceleration FTW */
-        transition: transform .25s; /* Define anim. speed */
-    }
+    span {
 
-    span.top-span {
-        top: 0;
-    }
+        &[class*="span"] {
+            display: block;
+            width: 51em;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            z-index: 1;
+            transform: translate3d(0,0,0); /* Acceleration FTW */
+            transition: transform .25s; /* Define anim. speed */
+            height: 12em;
+        }
 
-    span.btm-span {
-        bottom: 0;
+        &.top-span {
+            bottom: 50%;
+        }
+
+        &.btm-span {
+            top: 50%;
+        }
     }
 
     &:hover span.top-span {
