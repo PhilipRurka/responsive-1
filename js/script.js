@@ -57,31 +57,32 @@ $('a, button').each(function(){
 
 (function ( $, window, document, undefined ) {
 
-  $.fn.rift_img = function () {
+	 $.fn.rift_img = function () {
 
-    return this.each(function () {
+    	return this.each(function () {
 
-      var element = $(this),
-          elemImg = element.find('img'),
-          imgSrc  = elemImg.attr('src');
+			var element = $(this),
+          		elemImg = element.find('img'),
+          		imgSrc  = elemImg.attr('src');
 
-
-    element
-        .prepend('<span class="top-span"></span>')
-        .append('<span class="btm-span"></span>')
-        .find('span.top-span')
-        .css('background', 'url(' + imgSrc + ')')
-		.css('background-repeat', 'no-repeat')
-		.css('background-position', 'center calc(50% + 6em)')
-        .css('background-size', '100%')
-        .parent()
-        .find('span.btm-span')
-        .css('background', 'url(' + imgSrc + ')')
-		.css('background-repeat', 'no-repeat')
-		.css('background-position', 'center calc(50% - 6em)')
-        .css('background-size', '100%');
-    });
-  };
+	    	element
+	        .prepend('<span class="top-span"></span>')
+	        .append('<span class="bottom-span"></span>')
+	        .find('span.top-span')
+	        .css('background', 'url(' + imgSrc + ')')
+			.css('background-repeat', 'no-repeat')
+			// background-potition: center calc(50% + {half of bottom span height});
+			.css('background-position', 'center calc(50% + 6em)')
+	        .css('background-size', '100%')
+	        .parent()
+	        .find('span.bottom-span')
+	        .css('background', 'url(' + imgSrc + ')')
+			.css('background-repeat', 'no-repeat')
+			// background-potition: center calc(50% - {half of bottom span height});
+			.css('background-position', 'center calc(50% - 6em)')
+	        .css('background-size', '100%');
+    	});
+	};
 })( jQuery, window, document );
 
 $('.item-img').rift_img();

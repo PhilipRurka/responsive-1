@@ -45,9 +45,11 @@
 ************************************************************/
 
 .site-menu-selected {
-    background-color: $color-site-menu-selected;
+    background-color: white;
     color: $color-site-menu-a-selected!important;
-    box-shadow: inset 0 -18px 0px 0px $color-site-menu-a-selected-underline;
+    box-shadow: 0px 0px 10px 0px $color-site-menu-selected,
+                inset 0px -1px 81px 4px $color-site-menu-selected;
+                font-weight: bolder;
 }
 
 .header-section {
@@ -144,6 +146,8 @@
                     display: none;
                 }
 
+
+
                 ul {
                     list-style: none;
                     margin: 0;
@@ -167,6 +171,12 @@
                             font-size: 1.5em;
                             padding: 2em 0;
                             width: 12rem;
+
+                            &:hover:not(.site-menu-selected) {
+                                    background-color: $color-site-menu-hover-bg;
+                                    box-shadow: 0px 0px 10px 2px $color-site-menu-hover-underline,
+                                                inset 0px -1px 81px 4px $color-site-menu-hover-underline;
+                            }
                         }
                     }
                 }
@@ -212,6 +222,10 @@
                     border-radius: 5px;
                     float: right;
                     color: $color-blog-text;
+
+                    &:hover {
+                        background-color: $color-blog-bg-hover;
+                    }
                 }
             }
         }
@@ -271,7 +285,7 @@
                         display: inline-block;
                         width: 100%;
                         height: $var-content-item-a;
-                        background-color: mintcream;
+                        background-color: $color-content-item-bg;
                         box-shadow: 2px 2px 8px -2px black;
                         margin-bottom: 3em;
                         text-decoration: none;
@@ -281,21 +295,71 @@
                         }
 
                         .item-img {
-                            background-color: $color-item-img;
-                            width: 100%;
-                            height: $var-item-img;
-                            display: inline-block;
+                          position: relative;
+                          overflow: hidden;
+                          backface-visibility: hidden;
+                          height: $var-item-img;
+                          display: inline-block;
+                          cursor: pointer;
+                          width: 100%;
 
-                            @media screen and (max-width: 1580px) {
-                                height: 150px;
-                            }
+                          @media screen and (max-width: 1580px) {
+                              height: 150px;
+                          }
 
                             img {
-
+                                width: 100%;
+                                -webkit-filter: blur(5px);
+                            	filter: blur(5px);
+                                position: absolute;
+                                top: -30px;
+                                bottom: -30px;
                             }
 
-                            .item-img-effect {
+                            .middle-span {
+                                position: absolute;
+                                top: 50%;
+                                width: 100%;
+                                height: 60px;
+                                line-height: 60px; /* Same as height */
+                                margin: -30px 0 0 0; /* Half middle-span height */
+                                text-align: center;
+                                z-index: 0;
+                                color: $color-middle-span-tx;
+                                background: rgba($color-middle-span-bg, .75);
+                                font-size: 2em;
+                                letter-spacing: 5px;
+                            }
 
+                            span {
+
+                                &[class*="span"] {
+                                    display: block;
+                                    width: 51em;
+                                    overflow: hidden;
+                                    position: absolute;
+                                    left: 0;
+                                    z-index: 1;
+                                    transform: translate3d(0,0,0); /* Acceleration FTW */
+                                    transition: transform .25s; /* Define anim. speed */
+                                    height: 12em;
+                                }
+
+                                &.top-span {
+                                    bottom: 50%;
+                                }
+
+                                &.bottom-span {
+                                    top: 50%;
+                                }
+                            }
+
+                            &:hover span.top-span {
+                                transform: translate(0,-30px);
+                            }
+
+                            &:hover > span.bottom-span {
+                                transform: translate(0,30px);
                             }
                         }
 
@@ -327,77 +391,3 @@
 /***********************************************************
                       Footer Section
 ************************************************************/
-
-
-
-.item-img {
-  width: 300px;
-  position: relative;
-  overflow: hidden;
-  backface-visibility: hidden;
-  height: $var-item-img;
-
-    img {
-        width: 100%;
-        -webkit-filter: blur(5px);
-    	filter: blur(5px);
-        position: absolute;
-        top: -30px;
-        bottom: -30px;
-    }
-
-    .item-img-effect {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        height: 60px;
-        line-height: 60px; /* Same as height */
-        margin: -30px 0 0 0; /* Half item-img-effect height */
-        text-align: center;
-        z-index: 0;
-    }
-
-    span {
-
-        &[class*="span"] {
-            display: block;
-            width: 51em;
-            overflow: hidden;
-            position: absolute;
-            left: 0;
-            z-index: 1;
-            transform: translate3d(0,0,0); /* Acceleration FTW */
-            transition: transform .25s; /* Define anim. speed */
-            height: 12em;
-        }
-
-        &.top-span {
-            bottom: 50%;
-        }
-
-        &.btm-span {
-            top: 50%;
-        }
-    }
-
-    &:hover span.top-span {
-        transform: translate(0,-30px); /* Half item-img-effect height */
-    }
-
-    &:hover > span.btm-span {
-        transform: translate(0,30px); /* Half item-img-effect height */
-    }
-}
-/* Non-plugin styles */
-
-
-
-.item-img {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.item-img .item-img-effect {
-  color: #FFF;
-  background: rgba(0, 0, 0, .75);
-}

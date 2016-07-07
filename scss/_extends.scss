@@ -55,11 +55,13 @@ $Silver-Sand								: #CBCDCD;
 $Java										: #23afc8;
 $Deep-Cerulean								: #05839c;
 $Salmon										: #fa8661;
+$Orange										: #fb5b28;
 $Arrowtown									: #998c6a;
 $Bazaar										: #9e888a;
 $Juniper									: #769992;
 $Dove-Gray									: #676767;
 $Emperor									: #505050;
+$mintcream									: #f5fffa;
 
 
 /***********************************
@@ -70,17 +72,23 @@ $Emperor									: #505050;
 $color-site-menu-a									: $Dove-Gray;
 $color-brand										: $black;
 $color-blog-bg										: $Salmon;
+$color-blog-bg-hover								: $Orange;
 $color-blog-text									: $white;
 
 $color-site-menu-selected							: $Java;
-$color-site-menu-a-selected							: $white;
+$color-site-menu-a-selected							: $black;
 $color-site-menu-a-selected-underline				: $Deep-Cerulean;
+$color-site-menu-hover-bg							: $white;
+$color-site-menu-hover-underline					: $Deep-Cerulean;
 
 $color-greeting-bg									: $Hippie-Blue;
 $color-greeting-a									: $Silver-Sand;
 
-$color-item-img										: $Emperor;
+$color-content-item-bg								: $mintcream;
+$color-middle-span-tx								: $white;
+$color-middle-span-bg								: $black;
 $color-item-p										: $Emperor;
+
 
 /***********************************************************
                       	Font Family
@@ -99,19 +107,21 @@ $color-item-p										: $Emperor;
 ************************************************************/
 
 
-
+//Brand / Blog
 $var-lg-brand-blog-top-set : 3em;
 $var-sm-brand-blog-top-set : 1.5em;
 
-
+//Greeting
 $var-greeting-container-size : 30vh;
 
-
+//Content Items
 $var-item-img : calc(100vw - 83vw - (8 * 15px));
 $var-content-item-a : calc(#{$var-item-img} * 2 + 5vw);
+
+//Content Items Max
 $var-p-max-height : calc(100% - 1.5em - #{$var-item-img});
 
-
+//Content Items Min
 $var-img-min-height : 150px;
 $var-a-min-height : calc(#{$var-img-min-height} * 3);
 $var-p-min-height : calc(#{$var-img-min-height} * 2);
