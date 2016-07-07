@@ -71,14 +71,14 @@ $('a, button').each(function(){
 	        .find('span.top-span')
 	        .css('background', 'url(' + imgSrc + ')')
 			.css('background-repeat', 'no-repeat')
-			// background-potition: center calc(50% + {half of bottom span height});
+			// background-potition: center calc(50% + {half of span height});
 			.css('background-position', 'center calc(50% + 6em)')
 	        .css('background-size', '100%')
 	        .parent()
 	        .find('span.bottom-span')
 	        .css('background', 'url(' + imgSrc + ')')
 			.css('background-repeat', 'no-repeat')
-			// background-potition: center calc(50% - {half of bottom span height});
+			// background-potition: center calc(50% - {half of span height});
 			.css('background-position', 'center calc(50% - 6em)')
 	        .css('background-size', '100%');
     	});

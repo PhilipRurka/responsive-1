@@ -82,7 +82,7 @@ $color-site-menu-hover-bg							: $white;
 $color-site-menu-hover-underline					: $Deep-Cerulean;
 
 $color-greeting-bg									: $Hippie-Blue;
-$color-greeting-a									: $Silver-Sand;
+$color-greeting-a									: $mintcream;
 
 $color-content-item-bg								: $mintcream;
 $color-middle-span-tx								: $white;
@@ -115,7 +115,7 @@ $var-sm-brand-blog-top-set : 1.5em;
 $var-greeting-container-size : 30vh;
 
 //Content Items
-$var-item-img : calc(100vw - 83vw - (8 * 15px));
+$var-item-img : calc(100vw - 80vw - (8 * 15px));
 $var-content-item-a : calc(#{$var-item-img} * 2 + 5vw);
 
 //Content Items Max

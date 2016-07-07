@@ -9,8 +9,18 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-}
 
+    .overlay-global {
+        display: none;
+        background: rgba(black, 0.7);
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+    }
+}
 
 //////////// Clear Fix //////////////
 .clearfix::after {
@@ -39,13 +49,11 @@
 //////////// Outline Hack //////////////
 
 
-
 /***********************************************************
                       Header Section
 ************************************************************/
 
 .site-menu-selected {
-    background-color: white;
     color: $color-site-menu-a-selected!important;
     box-shadow: 0px 0px 10px 0px $color-site-menu-selected,
                 inset 0px -1px 81px 4px $color-site-menu-selected;
@@ -87,6 +95,7 @@
                     @include bg-dimention-position(2.5em, 2.5em, absolute, 0, $left : 0);
                     @extend %buttonless;
                     border-radius: 8px;
+                    z-index: 3;
                 }
             }
 
@@ -103,8 +112,24 @@
                         display: none;
                     }
 
+                    @media screen and (min-width: 826px) {
+                        margin-top: 2.7em;
+                    }
+
+                    @media screen and (min-width: 1060px) {
+                        margin-top: 2em;
+                    }
+
                     a {
-                        font-size: 1.6em;
+                        font-size: 1.5em;
+
+                        @media screen and (min-width: 826px) {
+                            font-size: 2em;
+                        }
+
+                        @media screen and (min-width: 1060px) {
+                            font-size: 2.5em;
+                        }
                     }
                 }
 
@@ -146,8 +171,6 @@
                     display: none;
                 }
 
-
-
                 ul {
                     list-style: none;
                     margin: 0;
@@ -165,10 +188,9 @@
                         width: 23%;
 
                         a {
+                            @include text(1.5em, $color-site-menu-a);
                             text-decoration: none;
-                            color: $color-site-menu-a;
                             display: inline-block;
-                            font-size: 1.5em;
                             padding: 2em 0;
                             width: 12rem;
 
@@ -217,11 +239,11 @@
                 }
 
                 button {
+                    @include text(1em, $color-blog-text);
                     background-color: $color-blog-bg;
                     border: initial;
                     border-radius: 5px;
                     float: right;
-                    color: $color-blog-text;
 
                     &:hover {
                         background-color: $color-blog-bg-hover;
@@ -254,9 +276,46 @@
             height: 100%;
 
             h1 {
+                @include text(5vw, $color-greeting-a, 500, 6px);
                 margin: calc(#{$var-greeting-container-size} / 3) 0;
-                font-size: 5vw;
-                color: $color-greeting-a;
+                text-shadow: 0 1px 0 #ccc,
+                             0 2px 0 #c9c9c9,
+                             0 3px 0 #bbb,
+                             0 4px 0 #b9b9b9,
+                             0 5px 0 #aaa,
+                             0 6px 1px rgba(0,0,0,.1),
+                             0 0 5px rgba(0,0,0,.1),
+                             0 1px 3px rgba(0,0,0,.3),
+                             0 3px 5px rgba(0,0,0,.2),
+                             0 5px 10px rgba(0,0,0,.25),
+                             0 10px 10px rgba(0,0,0,.2),
+                             0 20px 20px rgba(0,0,0,.15);
+
+                             @media screen and (max-width: 1200px) {
+                                font-size: 7vw;
+                                font-weight: 400;
+                             }
+
+                             @media screen and (max-width: 770px) {
+                                font-size: 9vw;
+                                font-weight: 300;
+                                margin: calc(#{$var-greeting-container-size} / 5) 0;
+                             }
+
+                &:hover {
+                    text-shadow:  0 -1px 0 #ccc,
+                                 0 -2px 0 #c9c9c9,
+                                 0 -3px 0 #bbb,
+                                 0 -4px 0 #b9b9b9,
+                                 0 -5px 0 #aaa,
+                                 0 -6px 1px rgba(0,0,0,.1),
+                                 0 0 5px rgba(0,0,0,.1),
+                                 0 -1px 3px rgba(0,0,0,.3),
+                                 0 -3px 5px rgba(0,0,0,.2),
+                                 0 -5px 10px rgba(0,0,0,.25),
+                                 0 -10px 10px rgba(0,0,0,.2),
+                                 0 -20px 20px rgba(0,0,0,.15);
+                }
             }
         }
     }
@@ -291,7 +350,7 @@
                         text-decoration: none;
 
                         @media screen and (max-width: 1580px) {
-                            height: calc(450px + 5vw);
+                            height: calc(600px + 5vw); // 3(unit) + 5vw
                         }
 
                         .item-img {
@@ -304,45 +363,35 @@
                           width: 100%;
 
                           @media screen and (max-width: 1580px) {
-                              height: 150px;
+                              height: 200px; // 1(unit)
                           }
 
                             img {
-                                width: 100%;
+                                @include bg-dimention-position(100%, 100%, absolute, -30px, 0, -30px);
                                 -webkit-filter: blur(5px);
                             	filter: blur(5px);
-                                position: absolute;
-                                top: -30px;
-                                bottom: -30px;
+
                             }
 
                             .middle-span {
-                                position: absolute;
-                                top: 50%;
-                                width: 100%;
-                                height: 60px;
-                                line-height: 60px; /* Same as height */
+                                // line-height: Same as height;
+                                @include text(2em, $color-middle-span-tx, 200, 5px, 60px);
+                                @include bg-dimention-position(100%, 60px, absolute, 50%, 0);
                                 margin: -30px 0 0 0; /* Half middle-span height */
                                 text-align: center;
                                 z-index: 0;
-                                color: $color-middle-span-tx;
                                 background: rgba($color-middle-span-bg, .75);
-                                font-size: 2em;
-                                letter-spacing: 5px;
                             }
 
                             span {
 
                                 &[class*="span"] {
+                                    @include bg-dimention-position(51em, 12em, absolute, $left: 0);
                                     display: block;
-                                    width: 51em;
                                     overflow: hidden;
-                                    position: absolute;
-                                    left: 0;
                                     z-index: 1;
                                     transform: translate3d(0,0,0); /* Acceleration FTW */
                                     transition: transform .25s; /* Define anim. speed */
-                                    height: 12em;
                                 }
 
                                 &.top-span {
@@ -369,15 +418,12 @@
                             overflow: hidden;
 
                             @media screen and (max-width: 1580px) {
-                                height: calc( 100% - 1.5em - 150px);
+                                height: calc( 100% - 1.5em - 200px); //100% - 1.5em - 1(unit)
                             }
 
                             p {
-                                font-size: 1.3em;
+                                @include text(1.3em, $color-item-p, 500, 0.5px, 1.75em);
                                 margin: 0.25em 1em 0;
-                                color: $color-item-p;
-                                letter-spacing: 0.5px;
-                                line-height: 1.75em;
                             }
                         }
                     }
