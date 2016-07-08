@@ -66,7 +66,7 @@
 }
 
 .burger-site-menu-selected {
-    box-shadow: inset 62px 0 0 0 blue, inset 64px 0px 0px 0px #242424;
+    box-shadow: inset 62px 0 0 0 $color-burger-selected-box, inset 64px 0px 0px 0px $color-burger-header-box;
     padding-left: 4em!important;
 }
 
@@ -83,7 +83,6 @@
 
     .burger-container {
         width: $var-burger-width;
-        background-color: black;
         height: 100%;
 
         .burger-site-menu {
@@ -94,7 +93,7 @@
                 position: relative;
                 width: 100%;
                 height: 77px;
-                background-color: rgba(255,255,255,0.14);
+                background-color: $color-burger-header-box;
                 transition: all 0.5s;
 
                 .big-x {
@@ -104,13 +103,10 @@
                 }
 
                 h1 {
-                    color: $color-burger-header-h1;
+                    @include text(2.5em, $color-burger-header-h1, 200, 10px);
                     padding: 20px 0 0 83px;
                     margin: 0;
-                    font-size: 2.5em;
-                    font-weight: 200;
                     text-transform: uppercase;
-                    letter-spacing: 10px;
                 }
             }
 
@@ -123,9 +119,9 @@
 
                 .item {
                     padding: 0;
-                    background-color: rgba(255, 255, 255, 0.2);
-                    border-top: 2px solid rgb(36, 36, 36);
-                    box-shadow: inset 0 0 2px 0 rgb(36, 36, 36);
+                    background-color: $color-burger-item;
+                    border-top: 2px solid $color-burger-header-box;
+                    box-shadow: inset 0 0 2px 0 $color-burger-header-box;
 
                     &.home > a {
 
@@ -160,21 +156,18 @@
                     }
 
                     a {
-                        text-decoration: none;
-                        color: white;
-                        font-size: $var-burger-menu-a-text;
+                        @include text($var-burger-menu-a-text, $color-burger-a-text, 300, 6px);
                         width: 100%;
-                        display: block;
-                        padding: $var-burger-menu-a-padding 0 $var-burger-menu-a-padding calc(3em + 2px);;
-                        box-sizing: border-box;
                         height: $var-burger-menu-a-height;
-                        letter-spacing: 6px;
+                        padding: $var-burger-menu-a-padding 0 $var-burger-menu-a-padding calc(3em + 2px);;
+                        text-decoration: none;
+                        display: block;
+                        box-sizing: border-box;
                         position: relative;
                         transition: all 0.5s;
-                        font-weight: 300;
 
                         &:hover:not(.burger-site-menu-selected) {
-                            box-shadow: inset 64px 0px 0px 0px black;
+                            box-shadow: inset 64px 0px 0px 0px $color-burger-item-hover;
                             padding-left: 4em!important;
                         }
                     }

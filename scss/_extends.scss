@@ -19,6 +19,7 @@
 	z-index: 1;
 	background-repeat: no-repeat;
 }
+
 @mixin bg-dimention-position($width, $height, $position, $top :null, $right :null, $bottom :null, $left :null) {
 	position: $position;
 	height: $height;
@@ -42,7 +43,6 @@
 }
 
 
-
 /***********************************************************
                       	  Colors
 ************************************************************/
@@ -62,29 +62,41 @@ $Juniper											: #769992;
 $Dove-Gray											: #676767;
 $Emperor											: #505050;
 $mintcream											: #f5fffa;
-
+$blue												: #0000ff;
+$Dark-Shaft											: #242424;
+$Light-Shaft										: #333333;
 
 /***********************************
            Colors Function
 ************************************/
 
+//burger
 $color-burger-header-h1								: $white;
+$color-burger-selected-box							: $blue;
+$color-burger-header-box							: $Dark-Shaft;
+$color-burger-item									: $Light-Shaft;
+$color-burger-a-text								: $white;
+$color-burger-item-hover							: black;
 
-$color-site-menu-a									: $Dove-Gray;
+//Brand
 $color-brand										: $black;
 $color-blog-bg										: $Salmon;
 $color-blog-bg-hover								: $Orange;
 $color-blog-text									: $white;
 
+//Site Menu
+$color-site-menu-a									: $Dove-Gray;
 $color-site-menu-selected							: $Java;
 $color-site-menu-a-selected							: $black;
 $color-site-menu-a-selected-underline				: $Deep-Cerulean;
 $color-site-menu-hover-bg							: $white;
 $color-site-menu-hover-underline					: $Deep-Cerulean;
 
+//Greeting
 $color-greeting-bg									: $Hippie-Blue;
 $color-greeting-a									: $mintcream;
 
+//Content
 $color-content-item-bg								: $mintcream;
 $color-middle-span-tx								: $white;
 $color-middle-span-bg								: $black;
@@ -113,34 +125,37 @@ $var-burger-menu-a-text 		: 1.5em;
 $var-burger-menu-a-padding	 	: 0.75em;
 
 $var-burger-menu-a-height		: calc((#{$var-burger-menu-a-padding} * 2) + #{$var-burger-menu-a-text});
-
+//
 
 //Burger Item Icon
-$var-icon-width-height				: 1.25em;
-$var-icon-top						: 17px;
-$var-icon-left						: 19px;
-
+$var-icon-width-height			: 1.25em;
+$var-icon-top					: 17px;
+$var-icon-left					: 19px;
+//
 
 //Brand / Blog
 $var-lg-brand-blog-top-set 		: 3em;
 $var-sm-brand-blog-top-set 	 	: 1.5em;
-
+//
 
 //Greeting
 $var-greeting-container-size 	: 30vh;
-
+//
 
 //Content Items
-$var-item-img 					: calc(100vw - 80vw - (8 * 15px));
-$var-content-item-a 			: calc(#{$var-item-img} * 2 + 5vw);
+$var-item-img-ch				: 80vw;
 
+$var-item-img 					: calc(100vw - #{$var-item-img-ch} - (8 * 15px));
+$var-content-item-a 			: calc(#{$var-item-img} * 2 + 5vw);
+//
 
 //Content Items Max
 $var-p-max-height				: calc(100% - 1.5em - #{$var-item-img});
-
+//
 
 //Content Items Min
 $var-img-min-height 			: 150px;
 
 $var-a-min-height 				: calc(#{$var-img-min-height} * 3);
 $var-p-min-height 				: calc(#{$var-img-min-height} * 2);
+//
