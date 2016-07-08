@@ -68,6 +68,7 @@ $mintcream									: #f5fffa;
            Colors Function
 ************************************/
 
+$color-burger-header-h1								: $white;
 
 $color-site-menu-a									: $Dove-Gray;
 $color-brand										: $black;
@@ -106,22 +107,40 @@ $color-item-p										: $Emperor;
             	  Relationship Variables
 ************************************************************/
 
+//Burger Menu
+$var-burger-width				: 20em;
+$var-burger-menu-a-text 		: 1.5em;
+$var-burger-menu-a-padding	 	: 0.75em;
+
+$var-burger-menu-a-height		: calc((#{$var-burger-menu-a-padding} * 2) + #{$var-burger-menu-a-text});
+
+
+//Burger Item Icon
+$var-icon-width-height				: 1.25em;
+$var-icon-top						: 17px;
+$var-icon-left						: 19px;
+
 
 //Brand / Blog
-$var-lg-brand-blog-top-set : 3em;
-$var-sm-brand-blog-top-set : 1.5em;
+$var-lg-brand-blog-top-set 		: 3em;
+$var-sm-brand-blog-top-set 	 	: 1.5em;
+
 
 //Greeting
-$var-greeting-container-size : 30vh;
+$var-greeting-container-size 	: 30vh;
+
 
 //Content Items
-$var-item-img : calc(100vw - 80vw - (8 * 15px));
-$var-content-item-a : calc(#{$var-item-img} * 2 + 5vw);
+$var-item-img 					: calc(100vw - 80vw - (8 * 15px));
+$var-content-item-a 			: calc(#{$var-item-img} * 2 + 5vw);
+
 
 //Content Items Max
-$var-p-max-height : calc(100% - 1.5em - #{$var-item-img});
+$var-p-max-height				: calc(100% - 1.5em - #{$var-item-img});
+
 
 //Content Items Min
-$var-img-min-height : 150px;
-$var-a-min-height : calc(#{$var-img-min-height} * 3);
-$var-p-min-height : calc(#{$var-img-min-height} * 2);
+$var-img-min-height 			: 150px;
+
+$var-a-min-height 				: calc(#{$var-img-min-height} * 3);
+$var-p-min-height 				: calc(#{$var-img-min-height} * 2);
