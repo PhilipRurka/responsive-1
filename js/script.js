@@ -36,14 +36,16 @@ $('button, a').each(function() {
 
 $('.burger-menu button').click(function(event) {
 	event.preventDefault();
-	$('.global-overlay').fadeIn(500);
-	$('.burger-wrap').fadeIn(500);
+	enterOverlay();
 });
 
 $('.big-x').click(function(event) {
 	event.preventDefault();
-	$('.global-overlay').fadeOut(500);
-	$('.burger-wrap').fadeOut(500);
+	quiteOverlay();
+});
+
+$('.global-overlay').click(function() {
+	quiteOverlay();
 });
 
 
@@ -51,6 +53,11 @@ $('.big-x').click(function(event) {
        Key
 *****************/
 
+$(document).keyup(function(event) {
+     if (event.keyCode == 27) {
+        quiteOverlay();
+    };
+});
 
 /***********************************************************
                       Non-Event Function
@@ -62,6 +69,26 @@ $('a, button').each(function(){
 	$(this).addClass('outline-hover');
 });
 /***** Outline Hack part 2/2 *****/
+
+
+function quiteOverlay(){
+	$('.global-overlay').fadeOut(500);
+	$('.burger-wrap').fadeOut(500);
+	$('.wrapper-overlay').removeClass('fixed');
+};
+
+function enterOverlay(){
+	$('.global-overlay').fadeIn(500);
+	$('.burger-wrap').fadeIn(500);
+	$('.wrapper-overlay').addClass('fixed');
+};
+
+$(window).on("resize", function() {
+
+    if($(window).width() > 825) {
+		quiteOverlay();
+	}
+}).resize();
 
 
 /***********************************************************
