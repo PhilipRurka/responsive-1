@@ -34,6 +34,19 @@ $('button, a').each(function() {
 /***** Outline Hack part 1/2 *****/
 
 
+$('.burger-menu button').click(function(event) {
+	event.preventDefault();
+	$('.global-overlay').fadeIn(500);
+	$('.burger-wrap').fadeIn(500);
+});
+
+$('.big-x').click(function(event) {
+	event.preventDefault();
+	$('.global-overlay').fadeOut(500);
+	$('.burger-wrap').fadeOut(500);
+});
+
+
 /*****************
        Key
 *****************/
