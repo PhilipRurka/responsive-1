@@ -1,7 +1,7 @@
 /***********************************************************
                          	Var
 ************************************************************/
-
+var bigContent = true;
 
 
 /***********************************************************
@@ -133,3 +133,49 @@ $('.item-img').rift_img();
 ************************************************************/
 
 // $(".contact").insertBefore($(".home"));
+
+
+
+// 		if (('.first-element a').data('clicked')) {
+// 			return;
+// 		} else {
+// 			$(this).parents('.global').fadeOut(500);
+// 			setTimeout(function () {
+//
+// 		        $('.global').fadeIn(500);
+// 		    }, 500);
+// 		}
+
+
+// if (bigContent) {
+//
+// }
+
+$('.item-wrapper a').each(function(){
+	$(this).click(function(event) {
+		event.preventDefault();
+		var varThis = $(this);
+
+		if (bigContent) {
+			bigContent = false;
+			$(this).parents('.global').fadeOut(500);
+			setTimeout(function () {
+				varThis.parent().parent()
+				.insertBefore($('.first-element'))
+				.addClass('first-element').next().removeClass('first-element');
+		        $('.global').fadeIn(500);
+		    }, 500);
+		} else {
+			$(this).parents('.global').fadeOut(500);
+			setTimeout(function () {
+				varThis.parent().parent()
+				.insertBefore($('.first-element'))
+				.addClass('first-element').next().removeClass('first-element');
+		        $('.global').fadeIn(500);
+		    }, 500);
+		}
+	});
+});
+
+
+//if body has class, when click, quit big.
