@@ -1,7 +1,7 @@
 /***********************************************************
                          	Var
 ************************************************************/
-var bigContent = true;
+var tf = true;
 
 
 /***********************************************************
@@ -48,6 +48,28 @@ $('.global-overlay').click(function() {
 	quiteOverlay();
 });
 
+$(document).on('click','.can-click a', function(event) {
+	event.preventDefault();
+	var varThis = $(this);
+	$(this).parents('.global').fadeOut(500);
+	$('.content-item .item').addClass('can-click');
+	$(this).parent().parent().removeClass('can-click');
+	setTimeout(function () {
+		varThis.parent().parent()
+		.insertBefore($('.first-element'))
+		.addClass('first-element')
+		.addClass('target');
+		$('.global').fadeIn(500);
+		varThis.parent().parent().next().removeClass('first-element');
+	}, 500);
+	event.stopPropagation();
+});
+
+$(document).on('click','.target', function(event) {
+	event.preventDefault();
+	event.stopPropagation();
+});
+
 
 /*****************
        Key
@@ -91,6 +113,13 @@ $(window).on("resize", function() {
 }).resize();
 
 
+$('.content-item .item').each(function() {
+	$(this).addClass('can-click');
+	tf = false;
+});
+
+
+
 /***********************************************************
                      Img Split Effect
 ************************************************************/
@@ -132,6 +161,15 @@ $('.item-img').rift_img();
                        	   Test
 ************************************************************/
 
+
+
+
+
+
+
+
+
+
 // $(".contact").insertBefore($(".home"));
 
 
@@ -147,35 +185,91 @@ $('.item-img').rift_img();
 // 		}
 
 
-// if (bigContent) {
+// $('.can-click a').each(function() {
+
+
+
+// });
+
+// $(document).on("click",".open-menu", function (e) {
+//     $(".open-menu").addClass("close-menu1");
+//     $(".open-menu").removeClass("open-menu");
+//     e.stopPropagation();
+// });
+
+
+
+
+
+
+
+
+// if (bigContent === false) {
+// 	$('.item-wrapper a').each(function(){
+// 		$(this).click(function(event) {
+// 			event.preventDefault();
+// 			var varThis = $(this);
+// 			bigContent = true;
+// 			$(this).parents('.global').fadeOut(500);
+// 			setTimeout(function () {
+// 				varThis.parent().parent()
+// 				.insertBefore($('.first-element'))
+// 				.addClass('first-element').next().removeClass('first-element');
+// 		        $('.global').fadeIn(500);
+// 		    }, 500);
+// 		});
+// 	});
+// }
 //
+// if (bigContent) {
+// 	$('.item-wrapper a').each(function(){
+// 		$(this).click(function(event) {
+// 			event.preventDefault();
+// 			var varThis = $(this);
+//
+// 			if ($(this).parent().parent().hasClass('first-element') === false ) {
+// 				$(this).parents('.global').fadeOut(500);
+// 				setTimeout(function () {
+// 					varThis.parent().parent()
+// 					.insertBefore($('.first-element'))
+// 					.addClass('first-element').next().removeClass('first-element');
+// 					$('.global').fadeIn(500);
+// 				}, 500);
+//
+// 			}
+// 		});
+// 	});
 // }
 
-$('.item-wrapper a').each(function(){
-	$(this).click(function(event) {
-		event.preventDefault();
-		var varThis = $(this);
 
-		if (bigContent) {
-			bigContent = false;
-			$(this).parents('.global').fadeOut(500);
-			setTimeout(function () {
-				varThis.parent().parent()
-				.insertBefore($('.first-element'))
-				.addClass('first-element').next().removeClass('first-element');
-		        $('.global').fadeIn(500);
-		    }, 500);
-		} else {
-			$(this).parents('.global').fadeOut(500);
-			setTimeout(function () {
-				varThis.parent().parent()
-				.insertBefore($('.first-element'))
-				.addClass('first-element').next().removeClass('first-element');
-		        $('.global').fadeIn(500);
-		    }, 500);
-		}
-	});
-});
+
+
+
+// $('.item-wrapper a').each(function(){
+// 	$(this).click(function(event) {
+// 		event.preventDefault();
+// 		var varThis = $(this);
+//
+// 		if (bigContent) {
+// 			bigContent = false;
+// 			$(this).parents('.global').fadeOut(500);
+// 			setTimeout(function () {
+// 				varThis.parent().parent()
+// 				.insertBefore($('.first-element'))
+// 				.addClass('first-element').next().removeClass('first-element');
+// 		        $('.global').fadeIn(500);
+// 		    }, 500);
+// 		} else {
+// 			$(this).parents('.global').fadeOut(500);
+// 			setTimeout(function () {
+// 				varThis.parent().parent()
+// 				.insertBefore($('.first-element'))
+// 				.addClass('first-element').next().removeClass('first-element');
+// 		        $('.global').fadeIn(500);
+// 		    }, 500);
+// 		}
+// 	});
+// });
 
 
 //if body has class, when click, quit big.
