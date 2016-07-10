@@ -165,6 +165,16 @@ $('.item-img').rift_img();
                        	   Test
 ************************************************************/
 
+$(document).on('mouseover','.p-wrapper', function(event) {
+	$('body').addClass('overflow-hidden');
+	event.stopPropagation();
+});
+
+$(document).on('mouseout','.p-wrapper', function(event) {
+	$('body').removeClass('overflow-hidden');
+	event.stopPropagation();
+});
+
 
 
 
