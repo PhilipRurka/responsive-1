@@ -142,7 +142,7 @@ $var-sm-brand-blog-top-set 	 	: 1.5em;
 $var-greeting-container-size 	: 30vh;
 //
 
-//Content Items
+//Content Items - Target
 $var-item-img-ch				: 80vw;
 
 $var-item-img 					: calc(100vw - #{$var-item-img-ch} - (8 * 15px));
@@ -159,3 +159,25 @@ $var-img-min-height 			: 150px;
 $var-a-min-height 				: calc(#{$var-img-min-height} * 3);
 $var-p-min-height 				: calc(#{$var-img-min-height} * 2);
 //
+
+//Content Items + Target
+//xm
+$var-item-img-target-xm-ch		: 30vw;
+
+$var-item-img-target-xm			: calc(100vw - #{$var-item-img-target-xm-ch} - (8 * 15px));
+$var-content-item-a-target-xm	: calc(#{$var-item-img-target-xm} * 2 + 5vw);
+$var-p-max-height-target-xm		: calc(100% - 1.5em - #{$var-item-img-target-xm});
+
+//sm
+$var-item-img-target-sm-ch		: 45vw;
+
+$var-item-img-target-sm			: calc(100vw - #{$var-item-img-target-sm-ch} - (8 * 15px));
+$var-content-item-a-target-sm	: calc(#{$var-item-img-target-sm} * 2 + 5vw);
+$var-p-max-height-target-sm		: calc(100% - 1.5em - #{$var-item-img-target-sm});
+
+//lg
+$var-item-img-target-lg-ch		: 55vw;
+
+$var-item-img-target-lg			: calc(100vw - #{$var-item-img-target-lg-ch} - (8 * 15px));
+$var-content-item-a-target-lg	: calc(#{$var-item-img-target-lg} * 2 + 5vw);
+$var-p-max-height-target-lg		: calc(100% - 1.5em - #{$var-item-img-target-lg});

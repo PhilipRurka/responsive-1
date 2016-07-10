@@ -55,10 +55,14 @@ $(document).on('click','.can-click a', function(event) {
 	$('.content-item .item').addClass('can-click');
 	$(this).parent().parent().removeClass('can-click');
 	setTimeout(function () {
+		$('.content-item .item').removeClass('target');
 		varThis.parent().parent()
 		.insertBefore($('.first-element'))
 		.addClass('first-element')
 		.addClass('target');
+		$('html, body').animate({
+        scrollTop: $(".content-item").offset().top
+		}, 0);
 		$('.global').fadeIn(500);
 		varThis.parent().parent().next().removeClass('first-element');
 	}, 500);
@@ -162,6 +166,30 @@ $('.item-img').rift_img();
 ************************************************************/
 
 
+
+
+
+
+
+// $('.target').scrollTop($('.target').prop("scrollHeight"));
+
+
+
+// $(window).on("resize", function() {
+//
+//     if($(window).width() < 1200) {
+//
+//         $('.target').addClass()
+//
+//     } else {
+//
+//         $(".content-comments").insertBefore($(".content-list"));
+//         $(".content-admin").insertBefore($(".content-comments"));
+//         $(".content-members").insertBefore($(".content-admin"));
+//
+//     }
+//
+// }).resize();
 
 
 
