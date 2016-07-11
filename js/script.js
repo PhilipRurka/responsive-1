@@ -1,8 +1,10 @@
 /***********************************************************
                          	Var
 ************************************************************/
-var tf = true;
 
+var tf = true;
+var $globalOverlay = $('.global-overlay');
+var $contentItems = $('.content-item .item');
 
 /***********************************************************
                       Append + CSS + Hide
@@ -44,7 +46,7 @@ $('.big-x').click(function(event) {
 	quiteOverlay();
 });
 
-$('.global-overlay').click(function() {
+$globalOverlay.click(function() {
 	quiteOverlay();
 });
 
@@ -52,10 +54,10 @@ $(document).on('click','.can-click a', function(event) {
 	event.preventDefault();
 	var varThis = $(this);
 	$(this).parents('.global').fadeOut(500);
-	$('.content-item .item').addClass('can-click');
+	$contentItems.addClass('can-click');
 	$(this).parent().parent().removeClass('can-click');
 	setTimeout(function () {
-		$('.content-item .item').removeClass('target');
+		$contentItems.removeClass('target');
 		varThis.parent().parent()
 		.insertBefore($('.first-element'))
 		.addClass('first-element')
@@ -98,13 +100,13 @@ $('a, button').each(function(){
 
 
 function quiteOverlay(){
-	$('.global-overlay').fadeOut(500);
+	$globalOverlay.fadeOut(500);
 	$('.burger-wrap').fadeOut(500);
 	$('.wrapper-overlay').removeClass('fixed');
 };
 
 function enterOverlay(){
-	$('.global-overlay').fadeIn(500);
+	$globalOverlay.fadeIn(500);
 	$('.burger-wrap').fadeIn(500);
 	$('.wrapper-overlay').addClass('fixed');
 };
@@ -117,7 +119,7 @@ $(window).on("resize", function() {
 }).resize();
 
 
-$('.content-item .item').each(function() {
+$contentItems.each(function() {
 	$(this).addClass('can-click');
 	tf = false;
 });
@@ -165,149 +167,12 @@ $('.item-img').rift_img();
                        	   Test
 ************************************************************/
 
-$(document).on('mouseover','.p-wrapper', function(event) {
+$(document).on('mouseover','.target .p-wrapper', function(event) {
 	$('body').addClass('overflow-hidden');
 	event.stopPropagation();
 });
 
-$(document).on('mouseout','.p-wrapper', function(event) {
+$(document).on('mouseout','.target .p-wrapper', function(event) {
 	$('body').removeClass('overflow-hidden');
 	event.stopPropagation();
 });
-
-
-
-
-
-
-
-// $('.target').scrollTop($('.target').prop("scrollHeight"));
-
-
-
-// $(window).on("resize", function() {
-//
-//     if($(window).width() < 1200) {
-//
-//         $('.target').addClass()
-//
-//     } else {
-//
-//         $(".content-comments").insertBefore($(".content-list"));
-//         $(".content-admin").insertBefore($(".content-comments"));
-//         $(".content-members").insertBefore($(".content-admin"));
-//
-//     }
-//
-// }).resize();
-
-
-
-
-
-
-
-
-// $(".contact").insertBefore($(".home"));
-
-
-
-// 		if (('.first-element a').data('clicked')) {
-// 			return;
-// 		} else {
-// 			$(this).parents('.global').fadeOut(500);
-// 			setTimeout(function () {
-//
-// 		        $('.global').fadeIn(500);
-// 		    }, 500);
-// 		}
-
-
-// $('.can-click a').each(function() {
-
-
-
-// });
-
-// $(document).on("click",".open-menu", function (e) {
-//     $(".open-menu").addClass("close-menu1");
-//     $(".open-menu").removeClass("open-menu");
-//     e.stopPropagation();
-// });
-
-
-
-
-
-
-
-
-// if (bigContent === false) {
-// 	$('.item-wrapper a').each(function(){
-// 		$(this).click(function(event) {
-// 			event.preventDefault();
-// 			var varThis = $(this);
-// 			bigContent = true;
-// 			$(this).parents('.global').fadeOut(500);
-// 			setTimeout(function () {
-// 				varThis.parent().parent()
-// 				.insertBefore($('.first-element'))
-// 				.addClass('first-element').next().removeClass('first-element');
-// 		        $('.global').fadeIn(500);
-// 		    }, 500);
-// 		});
-// 	});
-// }
-//
-// if (bigContent) {
-// 	$('.item-wrapper a').each(function(){
-// 		$(this).click(function(event) {
-// 			event.preventDefault();
-// 			var varThis = $(this);
-//
-// 			if ($(this).parent().parent().hasClass('first-element') === false ) {
-// 				$(this).parents('.global').fadeOut(500);
-// 				setTimeout(function () {
-// 					varThis.parent().parent()
-// 					.insertBefore($('.first-element'))
-// 					.addClass('first-element').next().removeClass('first-element');
-// 					$('.global').fadeIn(500);
-// 				}, 500);
-//
-// 			}
-// 		});
-// 	});
-// }
-
-
-
-
-
-// $('.item-wrapper a').each(function(){
-// 	$(this).click(function(event) {
-// 		event.preventDefault();
-// 		var varThis = $(this);
-//
-// 		if (bigContent) {
-// 			bigContent = false;
-// 			$(this).parents('.global').fadeOut(500);
-// 			setTimeout(function () {
-// 				varThis.parent().parent()
-// 				.insertBefore($('.first-element'))
-// 				.addClass('first-element').next().removeClass('first-element');
-// 		        $('.global').fadeIn(500);
-// 		    }, 500);
-// 		} else {
-// 			$(this).parents('.global').fadeOut(500);
-// 			setTimeout(function () {
-// 				varThis.parent().parent()
-// 				.insertBefore($('.first-element'))
-// 				.addClass('first-element').next().removeClass('first-element');
-// 		        $('.global').fadeIn(500);
-// 		    }, 500);
-// 		}
-// 	});
-// });
-
-
-//if body has class, when click, quit big.
