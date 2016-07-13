@@ -522,7 +522,7 @@
                 .item {
                     position: absolute;
                     top: $var-rec-box-top;
-                    z-index: 3;
+                    z-index: 2;
                     width: $var-rec-box-width;
                     height: $var-rec-box-height;
 
@@ -550,10 +550,10 @@
 
                     &.third-position {
                         left: $var-rec-item-position-3;
-                        z-index: 5;
+                        z-index: 3;
 
                         a {
-                            box-shadow: 0px 0px 10px 0px black;
+                            box-shadow: inset 0px 0px 12px 2px black;
                         }
 
                         @media screen and (min-width: 1400px) {
