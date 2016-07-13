@@ -183,69 +183,77 @@ $('.item-img').rift_img();
                        	   Test
 ************************************************************/
 
-$('.clickable-left').on('click', function(event) {
+$('.recomended-left-box').on('click', function(event) {
+	if ($(this).hasClass('clickable-left') && $('.recomended-right-box').hasClass('clickable-right')) {
+		$(this).removeClass('clickable-left');
 	setTimeout(function () {
 		$('.recomended-item .item').removeClass('recomended-transition');
-	}, 1000);
+		$('.recomended-left-box').addClass('clickable-left');
+	}, 750);
 
-	$('.recomended-item .item').each(function() {
-		if        ($(this).hasClass('first-position')) {
-				   $(this).addClass('second-position')
-				   .removeClass('first-position');
+		$('.recomended-item .item').each(function() {
+			if        ($(this).hasClass('first-position')) {
+					   $(this).addClass('second-position')
+					   .removeClass('first-position');
 
-		} else if ($(this).hasClass('second-position')) {
-				   $(this).addClass('third-position')
-			       .removeClass('second-position');
+			} else if ($(this).hasClass('second-position')) {
+					   $(this).addClass('third-position')
+				       .removeClass('second-position');
 
-		} else if ($(this).hasClass('third-position')) {
-				   $(this).addClass('fourth-position')
-				   .removeClass('third-position');
+			} else if ($(this).hasClass('third-position')) {
+					   $(this).addClass('fourth-position')
+					   .removeClass('third-position');
 
-		} else if ($(this).hasClass('fourth-position')) {
-				   $(this).addClass('fifth-position')
-				   .removeClass('fourth-position');
+			} else if ($(this).hasClass('fourth-position')) {
+					   $(this).addClass('fifth-position')
+					   .removeClass('fourth-position');
 
-		} else if ($(this).hasClass('fifth-position')) {
-				   $(this).addClass('first-position')
-				   .removeClass('fifth-position');
-		}
-	});
-	$('.recomended-item .item:not(.first-position)').each(function(){
-		$(this).addClass('recomended-transition');
-	});
+			} else if ($(this).hasClass('fifth-position')) {
+					   $(this).addClass('first-position')
+					   .removeClass('fifth-position');
+			}
+		});
+		$('.recomended-item .item:not(.first-position)').each(function(){
+			$(this).addClass('recomended-transition');
+		});
+	}
 });
 
-$('.clickable-right').on('click', function(event) {
-	setTimeout(function () {
-		$('.recomended-item .item').removeClass('recomended-transition');
-	}, 1000);
+$('.recomended-right-box').on('click', function(event) {
+	if ($(this).hasClass('clickable-right') && $('.recomended-left-box').hasClass('clickable-left')) {
+		$(this).removeClass('clickable-right');
+		setTimeout(function () {
+			$('.recomended-item .item').removeClass('recomended-transition');
+			$('.recomended-right-box').addClass('clickable-right');
+		}, 1000);
 
-	$('.recomended-item .item').each(function() {
-		if        ($(this).hasClass('first-position')) {
-				   $(this).addClass('fifth-position')
-				   .removeClass('first-position');
+		$('.recomended-item .item').each(function() {
+			if        ($(this).hasClass('first-position')) {
+					   $(this).addClass('fifth-position')
+					   .removeClass('first-position');
 
-		} else if ($(this).hasClass('second-position')) {
-				   $(this).addClass('first-position')
-			       .removeClass('second-position');
+			} else if ($(this).hasClass('second-position')) {
+					   $(this).addClass('first-position')
+				       .removeClass('second-position');
 
-		} else if ($(this).hasClass('third-position')) {
-				   $(this).addClass('second-position')
-				   .removeClass('third-position');
+			} else if ($(this).hasClass('third-position')) {
+					   $(this).addClass('second-position')
+					   .removeClass('third-position');
 
-		} else if ($(this).hasClass('fourth-position')) {
-				   $(this).addClass('third-position')
-				   .removeClass('fourth-position');
+			} else if ($(this).hasClass('fourth-position')) {
+					   $(this).addClass('third-position')
+					   .removeClass('fourth-position');
 
-		} else if ($(this).hasClass('fifth-position')) {
-				   $(this).addClass('fourth-position')
-				   .removeClass('fifth-position');
-		}
-	});
+			} else if ($(this).hasClass('fifth-position')) {
+					   $(this).addClass('fourth-position')
+					   .removeClass('fifth-position');
+			}
+		});
 
-	$('.recomended-item .item:not(.fifth-position)').each(function(){
-		$(this).addClass('recomended-transition');
-	});
+		$('.recomended-item .item:not(.fifth-position)').each(function(){
+			$(this).addClass('recomended-transition');
+		});
+	}
 });
 
 $(document).on('click','.recomended-item a', function(event) {
