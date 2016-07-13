@@ -92,9 +92,8 @@ $color-site-menu-a-selected-underline				: $Deep-Cerulean;
 $color-site-menu-hover-bg							: $white;
 $color-site-menu-hover-underline					: $Deep-Cerulean;
 
-//Greeting
-$color-greeting-bg									: $Hippie-Blue;
-$color-greeting-a									: $mintcream;
+//Recomended
+$color-recomended-bg								: $Hippie-Blue;
 
 //Content
 $color-content-item-bg								: $mintcream;
@@ -138,8 +137,62 @@ $var-lg-brand-blog-top-set 		: 3em;
 $var-sm-brand-blog-top-set 	 	: 1.5em;
 //
 
-//Greeting
-$var-greeting-container-size 	: 30vh;
+//Recomended
+$var-rec-wrap-width				: 100vw;
+$var-rec-item-img-ch			: 17vw;
+
+$var-rec-wrapper-height-pct		: 0.50;
+$var-rec-box-height-pct			: 0.40;
+$var-rec-box-width-pct-ch		: 0.81;
+
+
+$var-rec-panel-width-ch			: calc(#{$var-rec-wrap-width} - (#{$var-rec-box-width-pct-ch} * #{$var-rec-wrap-width}));
+$var-rec-wrapper-height			: calc(#{$var-rec-wrap-width} * #{$var-rec-wrapper-height-pct});
+$var-rec-box-height				: calc(#{$var-rec-wrap-width} * #{$var-rec-box-height-pct});
+$var-rec-box-width-ch			: calc(#{$var-rec-wrap-width} * #{$var-rec-box-width-pct-ch});
+
+$var-rec-bg						: calc(#{$var-rec-box-width-ch} + #{$var-rec-panel-width-ch});
+$var-rec-box-top				: calc((#{$var-rec-wrapper-height} / 2) - (#{$var-rec-box-height} / 2));
+$var-rec-panel-width			: calc(#{$var-rec-panel-width-ch} / 2);
+$var-rec-box-width				: calc(#{$var-rec-box-width-ch} / 3);
+$var-rec-box-left-1				: calc(#{$var-rec-panel-width});
+$var-rec-box-left-2				: calc(#{$var-rec-panel-width} + #{$var-rec-box-width});
+$var-rec-box-left-3				: calc(#{$var-rec-panel-width} + (#{$var-rec-box-width} * 2));
+$var-rec-item-top				: calc((#{$var-rec-wrapper-height} / 2) - (#{$var-rec-wrapper-height} / 2));
+$var-rec-item-position-1		: calc(#{$var-rec-panel-width} - #{$var-rec-box-width});
+$var-rec-item-position-2		: calc(#{$var-rec-panel-width});
+$var-rec-item-position-3		: calc(#{$var-rec-panel-width} + #{$var-rec-box-width});
+$var-rec-item-position-4		: calc(#{$var-rec-panel-width} + (#{$var-rec-box-width} * 2));
+$var-rec-item-position-5		: calc(#{$var-rec-panel-width} + #{$var-rec-box-width-ch});
+$var-rec-item-img 				: $var-rec-item-img-ch;
+$var-rec-content-item-a 		: $var-rec-box-height;
+$var-rec-p-max-height			: calc(#{$var-rec-box-height} - #{$var-rec-item-img-ch} - 1.5em);
+
+//Recomended Max
+$var-rec-wrap-width-max			: 1400px;
+$var-rec-item-img-ch-max		: 17vw;
+
+$var-rec-panel-width-ch-max		: calc(100vw - (#{$var-rec-box-width-pct-ch} * #{$var-rec-wrap-width-max}));
+$var-rec-wrapper-height-max		: calc(#{$var-rec-wrap-width-max} * #{$var-rec-wrapper-height-pct});
+$var-rec-box-height-max			: calc(#{$var-rec-wrap-width-max} * #{$var-rec-box-height-pct});
+$var-rec-box-width-ch-max		: calc(#{$var-rec-wrap-width-max} * #{$var-rec-box-width-pct-ch});
+
+$var-rec-box-top-max			: calc((#{$var-rec-wrapper-height-max} / 2) - (#{$var-rec-box-height-max} / 2));
+$var-rec-panel-width-max		: calc((#{$var-rec-panel-width-ch-max} / 2));
+$var-rec-box-width-max			: calc(#{$var-rec-box-width-ch-max} / 3);
+$var-rec-box-left-1-max			: calc(#{$var-rec-panel-width-max});
+$var-rec-box-left-2-max			: calc(#{$var-rec-panel-width-max} + #{$var-rec-box-width-max});
+$var-rec-box-left-3-max			: calc(#{$var-rec-panel-width-max} + (#{$var-rec-box-width-max} * 2));
+$var-rec-item-top-max			: calc((#{$var-rec-wrapper-height-max} / 2) - (#{$var-rec-wrapper-height-max} / 2));
+$var-rec-item-position-1-max	: calc(#{$var-rec-panel-width-max} - #{$var-rec-box-width-max});
+$var-rec-item-position-2-max	: calc(#{$var-rec-panel-width-max});
+$var-rec-item-position-3-max	: calc(#{$var-rec-panel-width-max} + #{$var-rec-box-width-max});
+$var-rec-item-position-4-max	: calc(#{$var-rec-panel-width-max} + (#{$var-rec-box-width-max} * 2));
+$var-rec-item-position-5-max	: calc(#{$var-rec-panel-width-max} + #{$var-rec-box-width-ch-max});
+$var-rec-item-img 				: $var-rec-item-img-ch;
+$var-rec-content-item-a-max 	: $var-rec-box-height;
+$var-rec-p-max-height-max		: calc(#{$var-rec-box-height-max} - #{$var-rec-item-img-ch-max} - 1.5em);
+//
 //
 
 //Content Items - Target

@@ -18,7 +18,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 2;
+        z-index: 10;
         display: none;
     }
 }
@@ -78,7 +78,7 @@
     position: absolute;
     top: 0;
     left: 5em;
-    z-index: 3;
+    z-index: 15;
     display: none;
 
     @media screen and (max-width: 525px) {
@@ -383,66 +383,356 @@
 ************************************************************/
 
 /******************************
-           Greeting
+          recomended
 ******************************/
+
+.recomended-transition {
+    transition: left 1s ease, box-shadow 1s ease;
+}
 
 .content-section {
     height: 100%;
+    position: relative;
+    z-index: 5;
 
-    .greeting-container {
-        background-color: $color-greeting-bg;
+    .recomended-wrapper {
+        background-color: $color-recomended-bg;
         width: 100vw;
-        box-shadow: 0px 3px 9px -2px black;
+        height: $var-rec-wrapper-height;
+        position: relative;
 
-        .greeting-content {
-            text-align: center;
+        @media screen and (min-width: 1400px) {
+            height: $var-rec-wrapper-height-max;
+        }
+
+        .recomended-panel-left {
+            background-color: $color-recomended-bg;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            width: $var-rec-panel-width;
             height: 100%;
 
-            h1 {
-                @include text(5vw, $color-greeting-a, 500, 6px);
-                margin: calc(#{$var-greeting-container-size} / 3) 0;
-                text-shadow: 0 1px 0 #ccc,
-                             0 2px 0 #c9c9c9,
-                             0 3px 0 #bbb,
-                             0 4px 0 #b9b9b9,
-                             0 5px 0 #aaa,
-                             0 6px 1px rgba(0,0,0,.1),
-                             0 0 5px rgba(0,0,0,.1),
-                             0 1px 3px rgba(0,0,0,.3),
-                             0 3px 5px rgba(0,0,0,.2),
-                             0 5px 10px rgba(0,0,0,.25),
-                             0 10px 10px rgba(0,0,0,.2),
-                             0 20px 20px rgba(0,0,0,.15);
+            @media screen and (min-width: 1400px) {
+                width: $var-rec-panel-width-max;
+            }
+        }
 
-                             @media screen and (max-width: 1200px) {
-                                font-size: 7vw;
-                                font-weight: 400;
-                             }
+        .recomended-panel-right {
+            background-color: $color-recomended-bg;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 5;
+            width: $var-rec-panel-width;
+            height: 100%;
 
-                             @media screen and (max-width: 770px) {
-                                font-size: 9vw;
-                                font-weight: 300;
-                                margin: calc(#{$var-greeting-container-size} / 5) 0;
-                             }
+            @media screen and (min-width: 1400px) {
+                width: $var-rec-panel-width-max;
+            }
+        }
 
-                &:hover {
-                    text-shadow:  0 -1px 0 #ccc,
-                                 0 -2px 0 #c9c9c9,
-                                 0 -3px 0 #bbb,
-                                 0 -4px 0 #b9b9b9,
-                                 0 -5px 0 #aaa,
-                                 0 -6px 1px rgba(0,0,0,.1),
-                                 0 0 5px rgba(0,0,0,.1),
-                                 0 -1px 3px rgba(0,0,0,.3),
-                                 0 -3px 5px rgba(0,0,0,.2),
-                                 0 -5px 10px rgba(0,0,0,.25),
-                                 0 -10px 10px rgba(0,0,0,.2),
-                                 0 -20px 20px rgba(0,0,0,.15);
+        .recomended-wrap {
+            position: relative;
+            width: $var-rec-wrap-width;
+            height: $var-rec-wrapper-height;
+
+            @media screen and (min-width: 1400px) {
+            	width: $var-rec-wrap-width-max;
+            }
+
+            .recomended-bg {
+                background-color: $color-recomended-bg;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                width: $var-rec-bg;
+                height: $var-rec-wrapper-height;
+
+                @media screen and (min-width: 1400px) {
+                    height: $var-rec-wrapper-height-max;
+                }
+            }
+
+            .recomended-left-box {
+                position: absolute;
+                top: $var-rec-box-top;
+                left: $var-rec-box-left-1;
+                z-index: 4;
+                width: $var-rec-box-width;
+                height: $var-rec-box-height;
+                background: rgba(white, 0.5);
+                background: -webkit-linear-gradient(left, #fff,rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+                background: -o-linear-gradient(right,  #fff,rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+                background: -moz-linear-gradient(right,  #fff,rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+                background: linear-gradient(to right,  #fff,rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+
+                @media screen and (min-width: 1400px) {
+                    top: $var-rec-box-top-max;
+                    left: $var-rec-box-left-1-max;
+                    width: $var-rec-box-width-max;
+                    height: $var-rec-box-height-max;
+                }
+            }
+
+            .recomended-middle-box {
+                opacity: 0.5;
+                position: absolute;
+                top: $var-rec-box-top;
+                left: $var-rec-box-left-2;
+                z-index: 2;
+                width: $var-rec-box-width;
+                height: $var-rec-box-height;
+
+                @media screen and (min-width: 1400px) {
+                    top: $var-rec-box-top-max;
+                    left: $var-rec-box-left-2-max;
+                    width: $var-rec-box-width-max;
+                    height: $var-rec-box-height-max;
+                }
+            }
+
+            .recomended-right-box {
+                position: absolute;
+                top: $var-rec-box-top;
+                left: $var-rec-box-left-3;
+                z-index: 4;
+                width: $var-rec-box-width;
+                height: $var-rec-box-height;
+                background: rgba(white, 0.5);
+                background: -webkit-linear-gradient(right,#fff,rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+                background: -o-linear-gradient(left, #fff,rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+                background: -moz-linear-gradient(left, #fff,rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+                background: linear-gradient(to left, #fff,rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+
+                @media screen and (min-width: 1400px) {
+                    top: $var-rec-box-top-max;
+                    left: $var-rec-box-left-3-max;
+                    width: $var-rec-box-width-max;
+                    height: $var-rec-box-height-max;
+                }
+            }
+
+            .recomended-item {
+                list-style: none;
+                margin: 0;
+
+                .item {
+                    position: absolute;
+                    top: $var-rec-box-top;
+                    z-index: 3;
+                    width: $var-rec-box-width;
+                    height: $var-rec-box-height;
+
+                    @media screen and (min-width: 1400px) {
+                        top: $var-rec-box-top-max;
+                        width: $var-rec-box-width-max;
+                        height: $var-rec-box-height-max;
+                    }
+
+                    &.first-position {
+                        left: $var-rec-item-position-1;
+
+                        @media screen and (min-width: 1400px) {
+                            left: $var-rec-item-position-1-max;
+                        }
+                    }
+
+                    &.second-position {
+                        left: $var-rec-item-position-2;
+
+                        @media screen and (min-width: 1400px) {
+                            left: $var-rec-item-position-2-max;
+                        }
+                    }
+
+                    &.third-position {
+                        left: $var-rec-item-position-3;
+                        z-index: 5;
+
+                        a {
+                            box-shadow: 0px 0px 10px 0px black;
+                        }
+
+                        @media screen and (min-width: 1400px) {
+                            left: $var-rec-item-position-3-max;
+                        }
+                    }
+
+                    &.fourth-position {
+                        left: $var-rec-item-position-4;
+
+                        @media screen and (min-width: 1400px) {
+                            left: $var-rec-item-position-4-max;
+                        }
+                    }
+
+                    &.fifth-position {
+                        left: $var-rec-item-position-5;
+
+                        @media screen and (min-width: 1400px) {
+                            left: $var-rec-item-position-5-max;
+                        }
+                    }
+
+                    a {
+                        display: inline-block;
+                        width: 100%;
+                        height: $var-rec-content-item-a;
+                        background-color: $color-content-item-bg;
+                        text-decoration: none;
+
+                        @media screen and (min-width: 1400px) {
+                            height: $var-rec-box-height-max;
+                        }
+
+                        .item-img {
+                            position: relative;
+                            overflow: hidden;
+                            backface-visibility: hidden;
+                            height: $var-rec-item-img;
+                            display: inline-block;
+                            cursor: pointer;
+                            width: 100%;
+
+                            @media screen and (min-width: 1400px) {
+                                height: 235px;
+                            }
+
+
+                            img {
+                                @include bg-dimention-position(100%, 100%, absolute, 0, 0, -30px);
+                                -webkit-filter: blur(5px);
+                                filter: blur(5px);
+
+                            }
+
+                            .middle-span {
+                                // line-height: Same as height;
+                                @include text(2em, $color-middle-span-tx, 200, 5px, 60px);
+                                @include bg-dimention-position(100%, 60px, absolute, 50%, 0);
+                                margin: -30px 0 0 0; /* Half middle-span height */
+                                text-align: center;
+                                z-index: 0;
+                                background: rgba($color-middle-span-bg, .75);
+                            }
+
+                            span {
+
+                                &[class*="span"] {
+                                    @include bg-dimention-position(27em, 12em, absolute, $left: 0);
+                                    display: block;
+                                    overflow: hidden;
+                                    z-index: 1;
+                                    transform: translate3d(0,0,0); /* Acceleration FTW */
+                                    transition: transform .25s; /* Define anim. speed */
+                                }
+
+                                &.top-span {
+                                    bottom: 50%;
+                                }
+
+                                &.bottom-span {
+                                    top: 50%;
+                                }
+                            }
+
+                            &:hover span.top-span {
+                                transform: translate(0,-30px);
+                            }
+
+                            &:hover > span.bottom-span {
+                                transform: translate(0,30px);
+                            }
+                        }
+
+                        .p-wrapper {
+                            max-height: $var-rec-p-max-height;
+                            display: block;
+                            overflow: hidden;
+
+                            @media screen and (min-width: 1400px) {
+                                height: calc( 100% - 1.5em - 235px); //100% - 1.5em - 1(unit)
+                            }
+
+                            p {
+                                @include text(1em, $color-item-p, 500, 0.5px, 1.5em);
+                                margin: 0.25em 1em 0;
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 }
+
+//     .recomended-container {
+//         background-color: $color-greeting-bg;
+//         width: 100vw;
+//         box-shadow: 0px 3px 9px -2px black;
+//         padding: 9em 0;
+//
+//         .recomended-content {
+//
+//             .recomended-seen {
+//                 margin: 0 auto;
+//                 position: relative;
+//                 width: 81vw;
+//                 height: 27vw;
+//
+//                 .left-block {
+//                     background-color: white;
+//                     position: absolute;
+//                     height: 27vw;
+//                     width: 27vw;
+//                     top: 0;
+//                     left: 0;
+//                     z-index: 5;
+//                     opacity: 0.5;
+//                 }
+//
+//                 .middle-block {
+//
+//                 }
+//
+//                 .right-block {
+//                     background-color: white;
+//                     position: absolute;
+//                     height: 27vw;
+//                     width: 27vw;
+//                     top: 0;
+//                     right: 0;
+//                     z-index: 5;
+//                     opacity: 0.5;
+//                 }
+//
+//                 .recomended-item {
+//                     list-style: none;
+//                     margin: 0;
+//                     width: 81vw;
+//                     height: 27vw;
+//
+//                     .item {
+//                         width: 27vw;
+//                         height: 27vw;
+//                         position: absolute;
+//                         top: 0;
+//                         left: 81vw;
+//                         background-color: red;
+//                         z-index: 4;
+//
+//                         a {
+//
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
 /******************************
             items
