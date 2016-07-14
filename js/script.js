@@ -6,6 +6,7 @@ var tf = true;
 var clickTime = true;
 var $globalOverlay = $('.global-overlay');
 var $contentItems = $('.content-item .item');
+var intervalId;
 
 /***********************************************************
                       Append + CSS + Hide
@@ -24,7 +25,7 @@ var $contentItems = $('.content-item .item');
 
 
 /*****************
-      Mouse
+      Click
 *****************/
 
 
@@ -81,8 +82,17 @@ $('.recomended-right-box').on('click', function() {
 	rightSlideFunc();
 });
 
-$('.recomended-left-box').on('click', function(event) {
+$('.recomended-left-box').on('click', function() {
 	leftSlideFunc();
+});
+
+$(document).on('click','.recomended-middle-box', function() {
+	clearInterval(intervalId);
+});
+
+
+$(document).on('click','.recomended-middle-box-2', function() {
+	intervalId = setInterval(leftSlideFunc, 3000);
 });
 
 
@@ -98,6 +108,29 @@ $(document).on('mouseover','.target .p-wrapper', function(event) {
 $(document).on('mouseout','.target .p-wrapper', function(event) {
 	$('body').removeClass('overflow-hidden');
 	event.stopPropagation();
+});
+
+$(document).on('mouseover','.recomended-left-box', function(event) {
+	setTimeout(function(){
+		$( ".recomended-middle-box" ).trigger( "click" );
+	}, 10);
+});
+
+$(document).on('mouseover','.third-position', function(event) {
+	setTimeout(function(){
+		$( ".recomended-middle-box" ).trigger( "click" );
+	}, 10);
+});
+
+$(document).on('mouseover','.recomended-right-box', function(event) {
+	setTimeout(function(){
+		$( ".recomended-middle-box" ).trigger( "click" );
+	}, 10);
+});
+
+
+$(document).on('mouseout','.recomended-left-box, .third-position, .recomended-right-box', function(event) {
+	$(".recomended-middle-box-2").trigger( "click" );
 });
 
 
@@ -187,7 +220,6 @@ function rightSlideFunc() {
 };
 
 function leftSlideFunc() {
-
 	if ($('.recomended-left-box').hasClass('clickable-left') && $('.recomended-right-box').hasClass('clickable-right')) {
 		$('.recomended-left-box').removeClass('clickable-left');
 	setTimeout(function () {
@@ -222,6 +254,10 @@ function leftSlideFunc() {
 		});
 	}
 };
+
+$(document).ready(function() {
+	$(".recomended-middle-box-2").trigger( "click" );
+});
 
 /***********************************************************
                      Img Split Effect
@@ -263,55 +299,3 @@ $('.item-img').rift_img();
 /***********************************************************
                        	   Test
 ************************************************************/
-
-$(document).on('click','.recomended-middle-box', function(event) {
-	clearInterval(intervalId);
-	event.preventDefault();
-});
-
-
-$(document).on('click','.recomended-middle-box-2', function(event) {
-	intervalId = setInterval(leftSlideFunc, 3000);
-	event.preventDefault();
-});
-
-
-
-var intervalId;
-var leftBoxTf = true;
-var thirdPosTf = true;
-var rightBoxTf = true;
-
-
-$(document).on('mouseover','.recomended-left-box', function(event) {
-	leftBoxTf = false;
-	setTimeout(function(){
-		$( ".recomended-middle-box" ).trigger( "click" );
-	}, 10);
-	event.stopPropagation();
-});
-
-$(document).on('mouseover','.third-position', function(event) {
-	thirdPosTf = false;
-	setTimeout(function(){
-		$( ".recomended-middle-box" ).trigger( "click" );
-	}, 10);
-	event.stopPropagation();
-});
-
-$(document).on('mouseover','.recomended-right-box', function(event) {
-	rightBoxTf = false;
-	setTimeout(function(){
-		$( ".recomended-middle-box" ).trigger( "click" );
-	}, 10);
-});
-
-
-$(document).on('mouseout','.recomended-left-box, .third-position, .recomended-right-box', function(event) {
-	$(".recomended-middle-box-2").trigger( "click" );
-	event.stopPropagation();
-});
-
-$(document).ready(function() {
-	$(".recomended-middle-box-2").trigger( "click" );
-});
