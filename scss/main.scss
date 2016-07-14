@@ -190,6 +190,11 @@
     .nav-section {
         width: 100%;
 
+        @media screen and (max-width: 767px) {
+            background-color: $color-recomended-bg;
+            box-shadow: 0px 0px 11px 1px black;
+        }
+
         .nav-content {
 
             @media screen and (max-width: 825px) {
@@ -219,6 +224,10 @@
                     @extend %buttonless;
                     border-radius: 8px;
                     z-index: 3;
+
+                    @media screen and (max-width: 767px) {
+                        background-image: url('../img/burger-white.svg');
+                    }
                 }
             }
 
@@ -278,9 +287,17 @@
                     position: relative;
                     padding-left: 1.25em;
 
+                    @media screen and (max-width: 767px) {
+                        color: $color-brand-max;
+                    }
+
                     &::before {
                         @include background-content('logo.svg', contain);
                         @include bg-dimention-position(1em, 1em, absolute, 0, $left : 0);
+
+                        @media screen and (max-width: 767px) {
+                            background-image: url('../img/logo-white.svg');
+                        }
                     }
                 }
             }
@@ -403,6 +420,10 @@
 
         @media screen and (min-width: 1400px) {
             height: $var-rec-wrapper-height-max;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: none;
         }
 
         .recomended-panel-left {
@@ -688,70 +709,6 @@
     }
 }
 
-//     .recomended-container {
-//         background-color: $color-greeting-bg;
-//         width: 100vw;
-//         box-shadow: 0px 3px 9px -2px black;
-//         padding: 9em 0;
-//
-//         .recomended-content {
-//
-//             .recomended-seen {
-//                 margin: 0 auto;
-//                 position: relative;
-//                 width: 81vw;
-//                 height: 27vw;
-//
-//                 .left-block {
-//                     background-color: white;
-//                     position: absolute;
-//                     height: 27vw;
-//                     width: 27vw;
-//                     top: 0;
-//                     left: 0;
-//                     z-index: 5;
-//                     opacity: 0.5;
-//                 }
-//
-//                 .middle-block {
-//
-//                 }
-//
-//                 .right-block {
-//                     background-color: white;
-//                     position: absolute;
-//                     height: 27vw;
-//                     width: 27vw;
-//                     top: 0;
-//                     right: 0;
-//                     z-index: 5;
-//                     opacity: 0.5;
-//                 }
-//
-//                 .recomended-item {
-//                     list-style: none;
-//                     margin: 0;
-//                     width: 81vw;
-//                     height: 27vw;
-//
-//                     .item {
-//                         width: 27vw;
-//                         height: 27vw;
-//                         position: absolute;
-//                         top: 0;
-//                         left: 81vw;
-//                         background-color: red;
-//                         z-index: 4;
-//
-//                         a {
-//
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
 
 /******************************
             items
