@@ -77,6 +77,14 @@ $(document).on('click','.target', function(event) {
 	event.stopPropagation();
 });
 
+$('.recomended-right-box').on('click', function() {
+	rightSlideFunc();
+});
+
+$('.recomended-left-box').on('click', function(event) {
+	leftSlideFunc();
+});
+
 
 /*****************
       hover
@@ -140,7 +148,80 @@ $contentItems.each(function() {
 	tf = false;
 });
 
+function rightSlideFunc() {
 
+	if ($('.recomended-right-box').hasClass('clickable-right') && $('.recomended-left-box').hasClass('clickable-left')) {
+		$('.recomended-right-box').removeClass('clickable-right');
+		setTimeout(function () {
+			$('.recomended-item .item').removeClass('recomended-transition');
+			$('.recomended-right-box').addClass('clickable-right');
+		}, 1000);
+
+		$('.recomended-item .item').each(function() {
+			if        ($(this).hasClass('first-position')) {
+					   $(this).addClass('fifth-position')
+					   .removeClass('first-position');
+
+			} else if ($(this).hasClass('second-position')) {
+					   $(this).addClass('first-position')
+					   .removeClass('second-position');
+
+			} else if ($(this).hasClass('third-position')) {
+					   $(this).addClass('second-position')
+					   .removeClass('third-position');
+
+			} else if ($(this).hasClass('fourth-position')) {
+					   $(this).addClass('third-position')
+					   .removeClass('fourth-position');
+
+			} else if ($(this).hasClass('fifth-position')) {
+					   $(this).addClass('fourth-position')
+					   .removeClass('fifth-position');
+			}
+		});
+
+		$('.recomended-item .item:not(.fifth-position)').each(function(){
+			$(this).addClass('recomended-transition');
+		});
+	}
+};
+
+function leftSlideFunc() {
+
+	if ($('.recomended-left-box').hasClass('clickable-left') && $('.recomended-right-box').hasClass('clickable-right')) {
+		$('.recomended-left-box').removeClass('clickable-left');
+	setTimeout(function () {
+		$('.recomended-item .item').removeClass('recomended-transition');
+		$('.recomended-left-box').addClass('clickable-left');
+	}, 1000);
+
+		$('.recomended-item .item').each(function() {
+			if        ($(this).hasClass('first-position')) {
+					   $(this).addClass('second-position')
+					   .removeClass('first-position');
+
+			} else if ($(this).hasClass('second-position')) {
+					   $(this).addClass('third-position')
+				       .removeClass('second-position');
+
+			} else if ($(this).hasClass('third-position')) {
+					   $(this).addClass('fourth-position')
+					   .removeClass('third-position');
+
+			} else if ($(this).hasClass('fourth-position')) {
+					   $(this).addClass('fifth-position')
+					   .removeClass('fourth-position');
+
+			} else if ($(this).hasClass('fifth-position')) {
+					   $(this).addClass('first-position')
+					   .removeClass('fifth-position');
+			}
+		});
+		$('.recomended-item .item:not(.first-position)').each(function(){
+			$(this).addClass('recomended-transition');
+		});
+	}
+};
 
 /***********************************************************
                      Img Split Effect
@@ -183,79 +264,54 @@ $('.item-img').rift_img();
                        	   Test
 ************************************************************/
 
-$('.recomended-left-box').on('click', function(event) {
-	if ($(this).hasClass('clickable-left') && $('.recomended-right-box').hasClass('clickable-right')) {
-		$(this).removeClass('clickable-left');
-	setTimeout(function () {
-		$('.recomended-item .item').removeClass('recomended-transition');
-		$('.recomended-left-box').addClass('clickable-left');
-	}, 750);
-
-		$('.recomended-item .item').each(function() {
-			if        ($(this).hasClass('first-position')) {
-					   $(this).addClass('second-position')
-					   .removeClass('first-position');
-
-			} else if ($(this).hasClass('second-position')) {
-					   $(this).addClass('third-position')
-				       .removeClass('second-position');
-
-			} else if ($(this).hasClass('third-position')) {
-					   $(this).addClass('fourth-position')
-					   .removeClass('third-position');
-
-			} else if ($(this).hasClass('fourth-position')) {
-					   $(this).addClass('fifth-position')
-					   .removeClass('fourth-position');
-
-			} else if ($(this).hasClass('fifth-position')) {
-					   $(this).addClass('first-position')
-					   .removeClass('fifth-position');
-			}
-		});
-		$('.recomended-item .item:not(.first-position)').each(function(){
-			$(this).addClass('recomended-transition');
-		});
-	}
-});
-
-$('.recomended-right-box').on('click', function(event) {
-	if ($(this).hasClass('clickable-right') && $('.recomended-left-box').hasClass('clickable-left')) {
-		$(this).removeClass('clickable-right');
-		setTimeout(function () {
-			$('.recomended-item .item').removeClass('recomended-transition');
-			$('.recomended-right-box').addClass('clickable-right');
-		}, 1000);
-
-		$('.recomended-item .item').each(function() {
-			if        ($(this).hasClass('first-position')) {
-					   $(this).addClass('fifth-position')
-					   .removeClass('first-position');
-
-			} else if ($(this).hasClass('second-position')) {
-					   $(this).addClass('first-position')
-				       .removeClass('second-position');
-
-			} else if ($(this).hasClass('third-position')) {
-					   $(this).addClass('second-position')
-					   .removeClass('third-position');
-
-			} else if ($(this).hasClass('fourth-position')) {
-					   $(this).addClass('third-position')
-					   .removeClass('fourth-position');
-
-			} else if ($(this).hasClass('fifth-position')) {
-					   $(this).addClass('fourth-position')
-					   .removeClass('fifth-position');
-			}
-		});
-
-		$('.recomended-item .item:not(.fifth-position)').each(function(){
-			$(this).addClass('recomended-transition');
-		});
-	}
-});
-
-$(document).on('click','.recomended-item a', function(event) {
+$(document).on('click','.recomended-middle-box', function(event) {
+	clearInterval(intervalId);
 	event.preventDefault();
+});
+
+
+$(document).on('click','.recomended-middle-box-2', function(event) {
+	intervalId = setInterval(leftSlideFunc, 3000);
+	event.preventDefault();
+});
+
+
+
+var intervalId;
+var leftBoxTf = true;
+var thirdPosTf = true;
+var rightBoxTf = true;
+
+
+$(document).on('mouseover','.recomended-left-box', function(event) {
+	leftBoxTf = false;
+	setTimeout(function(){
+		$( ".recomended-middle-box" ).trigger( "click" );
+	}, 10);
+	event.stopPropagation();
+});
+
+$(document).on('mouseover','.third-position', function(event) {
+	thirdPosTf = false;
+	setTimeout(function(){
+		$( ".recomended-middle-box" ).trigger( "click" );
+	}, 10);
+	event.stopPropagation();
+});
+
+$(document).on('mouseover','.recomended-right-box', function(event) {
+	rightBoxTf = false;
+	setTimeout(function(){
+		$( ".recomended-middle-box" ).trigger( "click" );
+	}, 10);
+});
+
+
+$(document).on('mouseout','.recomended-left-box, .third-position, .recomended-right-box', function(event) {
+	$(".recomended-middle-box-2").trigger( "click" );
+	event.stopPropagation();
+});
+
+$(document).ready(function() {
+	$(".recomended-middle-box-2").trigger( "click" );
 });

@@ -387,7 +387,7 @@
 ******************************/
 
 .recomended-transition {
-    transition: left 0.75s ease, box-shadow 1s ease;
+    transition: left 1s ease, box-shadow 1s ease;
 }
 
 .content-section {
@@ -484,6 +484,23 @@
                 top: $var-rec-box-top;
                 left: $var-rec-box-left-2;
                 z-index: 2;
+                width: $var-rec-box-width;
+                height: $var-rec-box-height;
+
+                @media screen and (min-width: 1400px) {
+                    top: $var-rec-box-top-max;
+                    left: $var-rec-box-left-2-max;
+                    width: $var-rec-box-width-max;
+                    height: $var-rec-box-height-max;
+                }
+            }
+
+            .recomended-middle-box-2 {
+                opacity: 0.5;
+                position: absolute;
+                top: $var-rec-box-top;
+                left: $var-rec-box-left-2;
+                z-index: -1;
                 width: $var-rec-box-width;
                 height: $var-rec-box-height;
 
