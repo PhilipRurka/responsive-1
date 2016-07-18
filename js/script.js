@@ -138,7 +138,7 @@ $(document).on('mouseout','.recomended-left-box, .third-position, .recomended-ri
 
 /********************************************************************/
 
-$(document).on('mouseenter','.site-menu a:not(.site-menu-selected)', function(event) {
+$(document).on('touchstart','.site-menu a:not(.site-menu-selected)', function(event) {
 	$(this).addClass('hover-site-menu');
 });
 
@@ -152,16 +152,12 @@ $(document).on('touchend','.site-menu a:not(.site-menu-selected)', function(even
 
 /********************************************************************/
 
-$(document).on('mouseenter', '.lg-blog-button button, .sm-blog-button button', function(event) {
-	$(this).addClass('hover-blog');
-});
-
-$(document).on('mouseleave','.lg-blog-button button, .sm-blog-button button', function(event) {
+$(document).on('touchstart', '.lg-blog-button button, .sm-blog-button button', function(event) {
 	$(this).removeClass('hover-blog');
 });
 
 $(document).on('touchend','.lg-blog-button button, .sm-blog-button button', function(event) {
-	$(this).removeClass('hover-blog');
+	$(this).addClass('hover-blog');
 });
 
 /********************************************************************/

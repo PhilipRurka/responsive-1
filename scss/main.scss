@@ -397,7 +397,9 @@
                     float: right;
 
                     &.hover-blog {
-                        background-color: $color-blog-bg-hover;
+                        &:hover {
+                            background-color: $color-blog-bg-hover;
+                        }
                     }
                 }
             }
