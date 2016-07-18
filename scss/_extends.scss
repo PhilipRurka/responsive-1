@@ -243,3 +243,111 @@ $var-item-img-target-lg-ch		: 55vw;
 $var-item-img-target-lg			: calc(100vw - #{$var-item-img-target-lg-ch} - (8 * 15px));
 $var-content-item-a-target-lg	: calc(#{$var-item-img-target-lg} * 2 + 5vw);
 $var-p-max-height-target-lg		: calc(100% - 1.5em - #{$var-item-img-target-lg});
+
+
+/**************************** Safary Compatible ****************************/
+
+//Recomended
+$var-saf-rec-wrap-width						: 100vw;
+$var-saf-rec-item-img-ch					: 17vw;
+
+$var-saf-rec-wrapper-height-pct				: 0.50;
+$var-saf-rec-box-height-pct					: 0.40;
+$var-saf-rec-box-width-pct-ch				: 0.81;
+
+
+$var-saf-rec-panel-width-ch					: calc(#{$var-saf-rec-wrap-width} - (#{$var-saf-rec-box-width-pct-ch} * #{$var-saf-rec-wrap-width}));
+$var-saf-rec-wrapper-height					: calc(#{$var-saf-rec-wrap-width} * #{$var-saf-rec-wrapper-height-pct});
+$var-saf-rec-box-height						: calc(#{$var-saf-rec-wrap-width} * #{$var-saf-rec-box-height-pct});
+$var-saf-rec-box-width-ch					: calc(#{$var-saf-rec-wrap-width} * #{$var-saf-rec-box-width-pct-ch});
+
+$var-saf-rec-bg								: calc((100vw * .81) + (100vw - (.81 * 100vw)));
+$var-saf-rec-box-top						: calc(((100vw * .5) / 2) - ((100vw * .4) / 2));
+$var-saf-rec-panel-width					: calc((100vw - (.81 * 100vw)) / 2);
+$var-saf-rec-box-width						: calc((100vw * .81) / 3);
+$var-saf-rec-box-left-1						: calc((100vw - (.81 * 100vw)) / 2);
+$var-saf-rec-box-left-2						: calc(((100vw - (.81 * 100vw)) / 2) + ((100vw * .81) / 3));
+$var-saf-rec-box-left-3						: calc(((100vw - (.81 * 100vw)) / 2) + (((100vw * .81) / 3) * 2));
+$var-saf-rec-item-top						: calc((#{$var-saf-rec-wrapper-height} / 2) - (#{$var-saf-rec-wrapper-height} / 2));
+$var-saf-rec-item-position-1				: calc(((100vw - (.81 * 100vw)) / 2) - ((100vw * .81) / 3));
+$var-saf-rec-item-position-2				: calc(((100vw - (.81 * 100vw)) / 2));
+$var-saf-rec-item-position-3				: calc(((100vw - (.81 * 100vw)) / 2) + ((100vw * .81) / 3));
+$var-saf-rec-item-position-4				: calc(((100vw - (.81 * 100vw)) / 2) + (((100vw * .81) / 3) * 2));
+$var-saf-rec-item-position-5				: calc(((100vw - (.81 * 100vw)) / 2) + (100vw * .81));
+$var-saf-rec-item-img 						: $var-saf-rec-item-img-ch;
+$var-saf-rec-content-item-a 				: $var-saf-rec-box-height;
+$var-saf-rec-p-max-height					: calc((100vw * .4) - 17vw - 1.5em);
+
+//Recomended Max
+$var-saf-rec-wrap-width-max					: 1400px;
+$var-saf-rec-item-img-ch-max				: 17vw;
+
+$var-saf-rec-panel-width-ch-max				: calc(100vw - (#{$var-saf-rec-box-width-pct-ch} * #{$var-saf-rec-wrap-width-max}));
+$var-saf-rec-wrapper-height-max				: calc(#{$var-saf-rec-wrap-width-max} * #{$var-saf-rec-wrapper-height-pct});
+$var-saf-rec-box-height-max					: calc(#{$var-saf-rec-wrap-width-max} * #{$var-saf-rec-box-height-pct});
+$var-saf-rec-box-width-ch-max				: calc(#{$var-saf-rec-wrap-width-max} * #{$var-saf-rec-box-width-pct-ch});
+
+$var-saf-rec-box-top-max					: calc(((1400px * .5) / 2) - ((1400px * .4) / 2));
+$var-saf-rec-panel-width-max				: calc((100vw - (.81 * 1400px)) / 2);
+$var-saf-rec-box-width-max					: calc((1400px * .81) / 3);
+$var-saf-rec-box-left-1-max					: calc((100vw - (.81 * 1400px)) / 2);
+$var-saf-rec-box-left-2-max					: calc(((1400px * .5) / 2) - ((1400px * .4) / 2));
+$var-saf-rec-box-left-3-max					: calc(((100vw - (.81 * 1400px)) / 2) + (((1400px * .81) / 3) * 2));
+$var-saf-rec-item-top-max					: calc((#{$var-saf-rec-wrapper-height-max} / 2) - (#{$var-saf-rec-wrapper-height-max} / 2));
+$var-saf-rec-item-position-1-max			: calc((((100vw - (.81 * 1400px)) / 2)) - ((1400px * .81) / 3));
+$var-saf-rec-item-position-2-max			: calc((((100vw - (.81 * 1400px)) / 2)));
+$var-saf-rec-item-position-3-max			: calc((((100vw - (.81 * 1400px)) / 2)) + ((1400px * .81) / 3));
+$var-saf-rec-item-position-4-max			: calc((((100vw - (.81 * 1400px)) / 2)) + (((1400px * .81) / 3) * 2));
+$var-saf-rec-item-position-5-max			: calc((((100vw - (.81 * 1400px)) / 2)) + (1400px * .81));
+$var-saf-rec-item-img 						: $var-saf-rec-item-img-ch;
+$var-saf-rec-content-item-a-max 			: $var-saf-rec-box-height;
+$var-saf-rec-p-max-height-max				: calc((100vw * .4) - 17vw - 1.5em);
+//
+//
+
+//Content Items - Target
+$var-saf-item-img-ch				: 80vw;
+
+$var-saf-item-img 					: calc(100vw - #{$var-saf-item-img-ch} - (8 * 15px));
+$var-saf-content-item-a 			: calc((100vw - 80vw - (8 * 15px)) * 2 + 5vw);
+//
+
+//Content Items Max
+$var-saf-p-max-height				: calc(100% - 1.5em - (100vw - 80vw - (8 * 15px)));
+//
+
+//Content Items Min
+$var-saf-img-min-height 			: 150px;
+
+$var-saf-a-min-height 				: calc(#{$var-saf-img-min-height} * 3);
+$var-saf-p-min-height 				: calc(#{$var-saf-img-min-height} * 2);
+
+//Content Items + Target
+//xm > 500
+$var-saf-item-img-target-ch-500		: 10vw;
+
+$var-saf-item-img-target-500		: calc(100vw - #{$var-saf-item-img-target-ch-500} - (8 * 15px));
+$var-saf-content-item-a-target-500 	: calc(#{$var-saf-item-img-target-500} * 2 + 5vw);
+$var-saf-p-max-height-target-500	: calc(100% - 1.5em - #{$var-saf-item-img-target-500});
+
+//Content Items + Target
+//xm
+$var-saf-item-img-target-xm-ch		: 30vw;
+
+$var-saf-item-img-target-xm			: 1em;
+$var-saf-content-item-a-target-xm	: calc(#{$var-saf-item-img-target-xm} * 2 + 5vw);
+$var-saf-p-max-height-target-xm		: calc(100% - 1.5em - (100vw - 30vw - (8 * 15px)));
+
+//sm
+$var-saf-item-img-target-sm-ch		: 45vw;
+
+$var-saf-item-img-target-sm			: calc(100vw - #{$var-saf-item-img-target-sm-ch} - (8 * 15px));
+$var-saf-content-item-a-target-sm	: calc((100vw - 45vw - (8 * 15px)) * 2 + 5vw);
+$var-saf-p-max-height-target-sm		: calc(100% - 1.5em - (100vw - 45vw - (8 * 15px)));
+
+//lg
+$var-saf-item-img-target-lg-ch		: 55vw;
+
+$var-saf-item-img-target-lg			: calc(100vw - #{$var-saf-item-img-target-lg-ch} - (8 * 15px));
+$var-saf-content-item-a-target-lg	: calc((100vw - 55vw - (8 * 15px)) * 2 + 5vw);
+$var-saf-p-max-height-target-lg		: calc(100% - 1.5em - (100vw - 55vw - (8 * 15px)));

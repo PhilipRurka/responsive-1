@@ -443,10 +443,14 @@
             position: absolute;
             top: 0;
             z-index: 5;
+            //Safari
+            width: $var-saf-rec-panel-width;
+            //
             width: $var-rec-panel-width;
             height: 100%;
 
             @media screen and (min-width: 1400px) {
+                width: $var-saf-rec-panel-width-max; //Safari
                 width: $var-rec-panel-width-max;
             }
         }
@@ -475,10 +479,13 @@
                 top: 0;
                 left: 0;
                 z-index: 1;
+                width: $var-saf-rec-bg; //Safari
                 width: $var-rec-bg;
+                height: $var-saf-rec-wrapper-height; //Safari
                 height: $var-rec-wrapper-height;
 
                 @media screen and (min-width: 1400px) {
+                    height: $var-saf-rec-wrapper-height-max;
                     height: $var-rec-wrapper-height-max;
                 }
             }
@@ -487,18 +494,23 @@
             .recomended-right-box {
                 position: absolute;
                 z-index: 4;
+                top: $var-saf-rec-box-top; //Safari
                 top: $var-rec-box-top;
+                width: $var-saf-rec-box-width; //Safari
                 width: $var-rec-box-width;
                 height: $var-rec-box-height;
 
                 @media screen and (min-width: 1400px) {
+                    top: $var-saf-rec-box-top-max; //Safari
                     top: $var-rec-box-top-max;
+                    width: $var-saf-rec-box-width-max; //Safari
                     width: $var-rec-box-width-max;
                     height: $var-rec-box-height-max;
                 }
             }
 
             .recomended-left-box {
+                left: $var-saf-rec-box-left-1; //Safari
                 left: $var-rec-box-left-1;
                 cursor: e-resize;
                 background: rgba(white, 0.5);
@@ -508,11 +520,13 @@
                 background: linear-gradient(to right,  #fff,rgba(255,255,255,0.8), rgba(255,255,255,0.6));
 
                 @media screen and (min-width: 1400px) {
+                    left: $var-saf-rec-box-left-1-max; // Safary
                     left: $var-rec-box-left-1-max;
                 }
             }
 
             .recomended-right-box {
+                left: $var-saf-rec-box-left-3; //Safari
                 left: $var-rec-box-left-3;
                 cursor: w-resize;
                 background: rgba(white, 0.5);
@@ -522,6 +536,7 @@
                 background: linear-gradient(to left, #fff,rgba(255,255,255,0.8), rgba(255,255,255,0.6));
 
                 @media screen and (min-width: 1400px) {
+                    left: $var-saf-rec-box-left-3-max; //Safari
                     left: $var-rec-box-left-3-max;
                 }
             }
@@ -529,16 +544,22 @@
             .recomended-middle-box,
             .recomended-middle-box-2 {
                 opacity: 0.5;
-                position: absolute;
-                top: $var-rec-box-top;
-                left: $var-rec-box-left-2;
                 z-index: 2;
+                position: absolute;
+                top: $var-saf-rec-box-top; //Safari
+                top: $var-rec-box-top;
+                left: $var-saf-rec-box-left-2; //Safari
+                left: $var-rec-box-left-2;
+                width: $var-saf-rec-box-width; //Safari
                 width: $var-rec-box-width;
                 height: $var-rec-box-height;
 
                 @media screen and (min-width: 1400px) {
+                    top: $var-saf-rec-box-top-max; //Safari
                     top: $var-rec-box-top-max;
+                    left: $var-saf-rec-box-left-2-max; //Safari
                     left: $var-rec-box-left-2-max;
+                    width: $var-saf-rec-box-width-max; //Safari
                     width: $var-rec-box-width-max;
                     height: $var-rec-box-height-max;
                 }
@@ -549,35 +570,44 @@
                 margin: 0;
 
                 .item {
-                    position: absolute;
-                    top: $var-rec-box-top;
                     z-index: 2;
+                    position: absolute;
+                    top: $var-saf-rec-box-top; //Safari
+                    top: $var-rec-box-top;
+                    width: $var-saf-rec-box-width; //Safari
                     width: $var-rec-box-width;
                     height: $var-rec-box-height;
 
                     @media screen and (min-width: 1400px) {
+                        top: $var-saf-rec-box-top-max; //Safari
                         top: $var-rec-box-top-max;
+                        width: $var-saf-rec-box-width-max; //Safari
                         width: $var-rec-box-width-max;
                         height: $var-rec-box-height-max;
                     }
 
                     &.first-position {
+                        left: $var-saf-rec-item-position-1; //Safari
                         left: $var-rec-item-position-1;
 
                         @media screen and (min-width: 1400px) {
+                            left: $var-saf-rec-item-position-1-max; //Safari
                             left: $var-rec-item-position-1-max;
                         }
                     }
 
                     &.second-position {
+                        left: $var-saf-rec-item-position-2; //Safari
                         left: $var-rec-item-position-2;
 
                         @media screen and (min-width: 1400px) {
+                            left: $var-saf-rec-item-position-2-max; //Safari
                             left: $var-rec-item-position-2-max;
                         }
                     }
 
                     &.third-position {
+                        left: $var-saf-rec-item-position-3; //Safari
                         left: $var-rec-item-position-3;
                         z-index: 3;
 
@@ -586,22 +616,27 @@
                         }
 
                         @media screen and (min-width: 1400px) {
+                            left: $var-saf-rec-item-position-3-max; //Safari
                             left: $var-rec-item-position-3-max;
                         }
                     }
 
                     &.fourth-position {
+                        left: $var-saf-rec-item-position-4; //Safari
                         left: $var-rec-item-position-4;
 
                         @media screen and (min-width: 1400px) {
+                            left: $var-saf-rec-item-position-4-max; //Safari
                             left: $var-rec-item-position-4-max;
                         }
                     }
 
                     &.fifth-position {
+                        left: $var-saf-rec-item-position-5; //Safari
                         left: $var-rec-item-position-5;
 
                         @media screen and (min-width: 1400px) {
+                            left: $var-saf-rec-item-position-5-max; //Safari
                             left: $var-rec-item-position-5-max;
                         }
                     }
@@ -620,6 +655,7 @@
                         .item-img {
                             position: relative;
                             overflow: hidden;
+                            -webkit-backface-visibility: hidden;
                             backface-visibility: hidden;
                             height: $var-rec-item-img;
                             display: inline-block;
@@ -678,6 +714,7 @@
                         }
 
                         .p-wrapper {
+                            max-height: $var-saf-rec-p-max-height; //Safari
                             max-height: $var-rec-p-max-height;
                             display: block;
                             overflow: hidden;
@@ -758,11 +795,13 @@
                                 height: 100%!important;
 
                                 .item-img {
+                                    height: $var-saf-item-img-target-xm; //Safari
                                     height: $var-item-img-target-xm;
                                 }
 
                                 .p-wrapper {
                                     height: 100%;
+                                    max-height: $var-saf-p-max-height-target-xm!important; //Safari
                                     max-height: $var-p-max-height-target-xm!important;
                                     overflow: scroll!important;
                                 }
@@ -793,6 +832,7 @@
                         .item-wrapper {
 
                             a {
+                                height: $var-saf-content-item-a-target-sm; //Safari
                                 height: $var-content-item-a-target-sm;
 
                                 .item-img {
@@ -800,6 +840,7 @@
                                 }
 
                                 .p-wrapper {
+                                    max-height: $var-saf-p-max-height-target-sm; //Safari
                                     max-height: $var-p-max-height-target-sm;
                                     overflow: scroll;
                                 }
@@ -817,6 +858,7 @@
                         width: 83.33333333%;
 
                         a {
+                            height: $var-saf-content-item-a-target-lg!important; //Safari
                             height: $var-content-item-a-target-lg!important;
 
                             .item-img {
@@ -824,6 +866,7 @@
                             }
 
                             .p-wrapper {
+                                max-height: $var-saf-p-max-height-target-lg!important; //Safari
                                 max-height: $var-p-max-height-target-lg!important;
                                 overflow: scroll!important;
                             }
@@ -836,6 +879,7 @@
                     a {
                         display: inline-block;
                         width: 100%;
+                        height: $var-saf-content-item-a; //Safari
                         height: $var-content-item-a;
                         background-color: $color-content-item-bg;
                         box-shadow: 2px 2px 8px -2px black;
@@ -850,6 +894,7 @@
                           position: relative;
                           overflow: hidden;
                           backface-visibility: hidden;
+                          -webkit-backface-visibility: hidden;
                           height: $var-item-img;
                           display: inline-block;
                           cursor: pointer;
@@ -906,6 +951,7 @@
                         }
 
                         .p-wrapper {
+                            max-height: $var-saf-p-max-height; //Safari
                             max-height: $var-p-max-height;
                             display: block;
                             overflow: hidden;
