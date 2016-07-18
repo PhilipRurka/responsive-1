@@ -100,6 +100,8 @@ $(document).on('click','.recomended-middle-box-2', function() {
       hover
 *****************/
 
+/********************************************************************/
+
 $(document).on('mouseover','.target .p-wrapper', function(event) {
 	$('body').addClass('overflow-hidden');
 	event.stopPropagation();
@@ -109,6 +111,8 @@ $(document).on('mouseout','.target .p-wrapper', function(event) {
 	$('body').removeClass('overflow-hidden');
 	event.stopPropagation();
 });
+
+/********************************************************************/
 
 $(document).on('mouseover','.recomended-left-box', function(event) {
 	setTimeout(function(){
@@ -128,10 +132,44 @@ $(document).on('mouseover','.recomended-right-box', function(event) {
 	}, 10);
 });
 
-
 $(document).on('mouseout','.recomended-left-box, .third-position, .recomended-right-box', function(event) {
 	$(".recomended-middle-box-2").trigger( "click" );
 });
+
+/********************************************************************/
+
+$(document).on('mouseenter','.site-menu a:not(.site-menu-selected)', function(event) {
+	$(this).addClass('hover-site-menu');
+});
+
+$(document).on('mouseleave','.site-menu a:not(.site-menu-selected)', function(event) {
+	$(this).removeClass('hover-site-menu');
+});
+
+/********************************************************************/
+
+$(document).on('mouseenter', '.lg-blog-button button, .sm-blog-button button', function(event) {
+	$(this).addClass('hover-blog');
+});
+
+$(document).on('mouseleave','.lg-blog-button button, .sm-blog-button button', function(event) {
+	$(this).removeClass('hover-blog');
+});
+
+/********************************************************************/
+
+$(document).on('mouseenter', '.item-img', function() {
+	$(this).children('.top-span').addClass('hover-top-split');
+	$(this).children('.bottom-span').addClass('hover-bottom-split');
+});
+
+$(document).on('mouseleave', '.item-img', function() {
+	$(this).children('.top-span').removeClass('hover-top-split');
+	$(this).children('.bottom-span').removeClass('hover-bottom-split');
+});
+
+/********************************************************************/
+
 
 
 /*****************
@@ -300,3 +338,24 @@ $('.item-img').rift_img();
 /***********************************************************
                        	   Test
 ************************************************************/
+
+var touch = window.ontouchstart
+            || (navigator.MaxTouchPoints > 0)
+            || (navigator.msMaxTouchPoints > 0);
+
+if (touch) { // remove all :hover stylesheets
+    try { // prevent exception on browsers not supporting DOM styleSheets properly
+        for (var si in document.styleSheets) {
+            var styleSheet = document.styleSheets[si];
+            if (!styleSheet.rules) continue;
+
+            for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+                if (!styleSheet.rules[ri].selectorText) continue;
+
+                if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                    styleSheet.deleteRule(ri);
+                }
+            }
+        }
+    } catch (ex) {}
+}
