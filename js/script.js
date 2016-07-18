@@ -160,7 +160,7 @@ function quiteOverlay(){
 	$globalOverlay.fadeOut(500);
 	$('.burger-wrap').fadeOut(500);
 	$('.wrapper-overlay').removeClass('fixed');
-	$('body').scrollTop();
+	$('body').scrollTop(0);
 };
 
 function enterOverlay(){
