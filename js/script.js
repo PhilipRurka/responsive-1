@@ -146,6 +146,10 @@ $(document).on('mouseleave','.site-menu a:not(.site-menu-selected)', function(ev
 	$(this).removeClass('hover-site-menu');
 });
 
+$(document).on('touchend','.site-menu a:not(.site-menu-selected)', function(event) {
+	$(this).removeClass('hover-site-menu');
+});
+
 /********************************************************************/
 
 $(document).on('mouseenter', '.lg-blog-button button, .sm-blog-button button', function(event) {
@@ -153,6 +157,10 @@ $(document).on('mouseenter', '.lg-blog-button button, .sm-blog-button button', f
 });
 
 $(document).on('mouseleave','.lg-blog-button button, .sm-blog-button button', function(event) {
+	$(this).removeClass('hover-blog');
+});
+
+$(document).on('touchend','.lg-blog-button button, .sm-blog-button button', function(event) {
 	$(this).removeClass('hover-blog');
 });
 
@@ -167,6 +175,12 @@ $(document).on('mouseleave', '.item-img', function() {
 	$(this).children('.top-span').removeClass('hover-top-split');
 	$(this).children('.bottom-span').removeClass('hover-bottom-split');
 });
+
+$(document).on('touchend', '.item-img', function() {
+	$(this).children('.top-span').removeClass('hover-top-split');
+	$(this).children('.bottom-span').removeClass('hover-bottom-split');
+});
+
 
 /********************************************************************/
 
