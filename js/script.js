@@ -162,20 +162,20 @@ $(document).on('touchend','.lg-blog-button button, .sm-blog-button button', func
 
 /********************************************************************/
 
-$(document).on('mouseenter', '.item-img', function() {
+$(document).on('mouseover', '.item-img', function() {
 	$(this).children('.top-span').addClass('hover-top-split');
 	$(this).children('.bottom-span').addClass('hover-bottom-split');
 });
 
-$(document).on('mouseleave', '.item-img', function() {
+$(document).on('mouseout', '.item-img', function() {
 	$(this).children('.top-span').removeClass('hover-top-split');
 	$(this).children('.bottom-span').removeClass('hover-bottom-split');
 });
 
-$(document).on('touchend', '.item-img', function() {
-	$(this).children('.top-span').removeClass('hover-top-split');
-	$(this).children('.bottom-span').removeClass('hover-bottom-split');
-});
+// $(document).on('touchend', '.item-img', function() {
+// 	$(this).children('.top-span').removeClass('hover-top-split');
+// 	$(this).children('.bottom-span').removeClass('hover-bottom-split');
+// });
 
 
 /********************************************************************/
