@@ -28,7 +28,10 @@
 }
 
 .overflow-hidden {
-    overflow: hidden;
+
+    @media screen and (min-width: 768px) {
+        overflow: hidden;
+    }
 }
 
 //////////// Clear Fix //////////////
@@ -48,7 +51,7 @@
 	&:focus {
 		outline: none;
 	}
-};
+}
 
 .outline-hover {
     &:hover {
@@ -752,17 +755,30 @@
                         .item-wrapper {
 
                             a {
-                                height: $var-content-item-a-target-xm!important;
+                                height: 100%!important;
 
                                 .item-img {
-                                    height: $var-item-img-target-xm!important;
+                                    height: $var-item-img-target-xm;
                                 }
 
                                 .p-wrapper {
+                                    height: 100%;
                                     max-height: $var-p-max-height-target-xm!important;
                                     overflow: scroll!important;
                                 }
                             }
+                        }
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        padding: 0;
+
+                        .item-img {
+                            height: $var-item-img-target-500!important;
+                        }
+
+                        p {
+                            margin: 0.25em 0.5em 0!important;
                         }
                     }
 

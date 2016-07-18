@@ -215,6 +215,14 @@ $var-p-min-height 				: calc(#{$var-img-min-height} * 2);
 //
 
 //Content Items + Target
+//xm > 500
+$var-item-img-target-ch-500		: 10vw;
+
+$var-item-img-target-500		: calc(100vw - #{$var-item-img-target-ch-500} - (8 * 15px));
+$var-content-item-a-target-500 	: calc(#{$var-item-img-target-500} * 2 + 5vw);
+$var-p-max-height-target-500	: calc(100% - 1.5em - #{$var-item-img-target-500});
+
+//Content Items + Target
 //xm
 $var-item-img-target-xm-ch		: 30vw;
 
